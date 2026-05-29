@@ -20,10 +20,13 @@ nginx -t
 systemctl reload nginx
 
 if [[ ! -f "/etc/letsencrypt/live/${SITE_HOST}/fullchain.pem" ]]; then
-  certbot certonly --webroot -w /var/www/certbot \
+  if certbot certonly --webroot -w /var/www/certbot \
     -d "${SITE_HOST}" \
-    --non-interactive --agree-tos --email "${CERTBOT_EMAIL}"
-  cp "${DEPLOY_PATH}/toir.masterdoc.pro.nginx.conf" "${SITE}"
-  nginx -t
-  systemctl reload nginx
+    --non-interactive --agree-tos --email "${CERTBOT_EMAIL}"; then
+    cp "${DEPLOY_PATH}/toir.masterdoc.pro.nginx.conf" "${SITE}"
+    nginx -t
+    systemctl reload nginx
+  else
+    echo "certbot skipped: add DNS A record for ${SITE_HOST}, then re-run deploy"
+  fi
 fi

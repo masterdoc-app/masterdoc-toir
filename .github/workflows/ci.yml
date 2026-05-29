@@ -1,4 +1,4 @@
-name: CI
+name: Deploy TOiR landing
 
 on:
   push:
