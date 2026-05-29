@@ -31,7 +31,7 @@ jobs:
           echo "Landing OK"
 
   deploy:
-    name: Deploy to ${{ env.SITE_HOST }}
+    name: Deploy to toir.masterdoc.pro
     runs-on: ubuntu-latest
     needs: check
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
