@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Система ТОиР Masterdoc — программа учёта ремонтов на ИИ</title>
+  <meta name="description" content="Masterdoc — программа ТОиР для предприятия: автоматизация технического обслуживания и ремонта, учёт ремонтов оборудования, система контроля простоя. Демо для завода." />
+  <meta name="keywords" content="система тоир, программа тоир, программа учета ремонтов, автоматизация технического обслуживания и ремонта, программа для обслуживания оборудования, система управления техническим обслуживанием и ремонтами, программа тоир для предприятия" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Masterdoc — система ТОиР на основе ИИ" />
+  <meta property="og:description" content="Программа автоматизации технического обслуживания и ремонта для предприятия. Учёт ремонтов оборудования, copilot для техников." />
+  <meta property="og:locale" content="ru_RU" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Masterdoc",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, iOS, Android",
+    "description": "Система управления техническим обслуживанием и ремонтами на основе ИИ. Программа ТОиР для предприятия: автоматизация ТОиР, учёт ремонтов и обслуживание оборудования.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "RUB",
+      "description": "Демо"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/logo-mark.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="Masterdoc — на главную">
+        <img src="assets/logo-mark.svg" alt="" width="28" height="28" />
+        <span class="logo-text">masterdoc</span>
+      </a>
+
+      <div class="header-actions">
+        <a href="#demo" class="btn-primary demo-link">Демо</a>
+        <button class="menu-toggle" type="button" aria-label="Меню">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Связанный. Интеллектуальный. Адаптивный.</p>
+        <div class="hero-grid">
+          <div class="hero-left">
+            <h1 class="hero-title">Первая система ТОиР на&nbsp;основе&nbsp;ИИ.</h1>
+            <div class="hero-cta">
+              <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+            </div>
+          </div>
+          <p class="hero-desc">Masterdoc — система управления техническим обслуживанием и ремонтами на базе ИИ. Программа для обслуживания оборудования и учёта ремонтов: заказ-наряды, автоматизация ТОиР и copilot для техников в поле.</p>
+        </div>
+        <figure class="hero-scene">
+          <img class="hero-scene__photo" src="assets/hero-bg.jpg" alt="Промышленный цех — интерфейс Masterdoc" width="1600" height="720" />
+          <div class="hero-scene__ui" aria-hidden="true">
+            <div class="ui-card ui-card--order">
+              <div class="ui-order-head">
+                <span class="ui-order-id">№034</span>
+                <span class="ui-pill ui-pill--blue">Новый</span>
+              </div>
+              <h2 class="ui-order-title">Сезонная проверка электросоединений</h2>
+              <div class="ui-order-foot">
+                <span class="ui-status"><span class="ui-status-ring"></span>Открыт</span>
+                <span class="ui-time">
+                  <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M10 5.5V10l3 1.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  1 ч
+                </span>
+              </div>
+            </div>
+
+            <div class="ui-card ui-card--dash">
+              <div class="ui-dash-section">
+                <h3 class="ui-dash-title">Процент выполнения</h3>
+                <div class="ui-kpis">
+                  <div class="ui-kpi ui-kpi--blue">
+                    <strong>87</strong>
+                    <span>Создано</span>
+                  </div>
+                  <div class="ui-kpi ui-kpi--green">
+                    <strong>84</strong>
+                    <span>Выполнено</span>
+                  </div>
+                </div>
+                <div class="ui-chart">
+                  <svg viewBox="0 0 420 110" preserveAspectRatio="none">
+                    <line x1="0" y1="88" x2="420" y2="88" stroke="rgba(255,255,255,.08)"/>
+                    <line x1="0" y1="66" x2="420" y2="66" stroke="rgba(255,255,255,.06)" stroke-dasharray="4 6"/>
+                    <line x1="0" y1="44" x2="420" y2="44" stroke="rgba(255,255,255,.06)" stroke-dasharray="4 6"/>
+                    <path d="M0 72 C35 68, 70 52, 105 58 S175 38, 245 42 S350 28, 420 32" stroke="#5b9cff" stroke-width="2.5" fill="none"/>
+                    <path d="M0 78 C35 74, 70 62, 105 66 S175 50, 245 54 S350 40, 420 44" stroke="#45d483" stroke-width="2.5" fill="none"/>
+                    <text x="0" y="106" fill="#8b95a8" font-size="10" font-family="Inter,sans-serif">12 авг</text>
+                    <text x="68" y="106" fill="#8b95a8" font-size="10" font-family="Inter,sans-serif">1 сен</text>
+                    <text x="136" y="106" fill="#8b95a8" font-size="10" font-family="Inter,sans-serif">15 сен</text>
+                    <text x="204" y="106" fill="#8b95a8" font-size="10" font-family="Inter,sans-serif">29 сен</text>
+                    <text x="272" y="106" fill="#8b95a8" font-size="10" font-family="Inter,sans-serif">13 окт</text>
+                    <text x="340" y="106" fill="#8b95a8" font-size="10" font-family="Inter,sans-serif">27 окт</text>
+                    <text x="392" y="106" fill="#8b95a8" font-size="10" font-family="Inter,sans-serif">10 ноя</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="ui-dash-divider"></div>
+
+              <div class="ui-dash-section">
+                <h3 class="ui-dash-title">Объекты</h3>
+                <div class="ui-place">
+                  <span class="ui-pin" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5c-3.04 0-5.5 2.35-5.5 5.25 0 3.95 5.5 13.25 5.5 13.25S17.5 11.7 17.5 7.75 15.04 2.5 12 2.5Z" fill="#45d483"/><circle cx="12" cy="7.75" r="2" fill="#0f172a"/></svg>
+                  </span>
+                  <div>
+                    <p class="ui-place-label">Текущее местоположение</p>
+                    <p class="ui-place-addr">Санкт-Петербург | Склад 2 | ул. Центральная, 14</p>
+                  </div>
+                </div>
+                <div class="ui-plan">
+                  <svg viewBox="0 0 360 130" fill="none">
+                    <rect x="1" y="1" width="358" height="128" rx="8" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>
+                    <path d="M1 65h358M120 1v128M240 1v128M120 42h120M180 42v86" stroke="rgba(255,255,255,.1)" stroke-width="1"/>
+                    <rect x="24" y="18" width="72" height="36" rx="2" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                    <rect x="252" y="18" width="84" height="36" rx="2" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                    <rect x="132" y="78" width="96" height="36" rx="2" stroke="rgba(255,255,255,.08)" stroke-width="1"/>
+                    <circle cx="198" cy="96" r="6" fill="#45d483"/>
+                    <circle cx="198" cy="96" r="11" stroke="#45d483" stroke-opacity=".35" stroke-width="2.5"/>
+                    <circle cx="198" cy="96" r="16" stroke="#45d483" stroke-opacity=".15" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="logos">
+      <div class="container logos-inner">
+        <p class="logos-label">Нам доверяют заводы и производственные предприятия</p>
+        <div class="logos-row">
+          <span class="logo-word">БКЗ</span>
+          <span class="logo-word">Пензмаш</span>
+          <span class="logo-word logo-word--wide">ЧЗЭМ</span>
+          <span class="logo-word logo-word--soft">Русэлпром</span>
+          <span class="logo-word">Сокол</span>
+          <span class="logo-word">Миассмаш</span>
+          <span class="logo-word logo-word--soft">Компрессор</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="platform">
+      <div class="container platform-head">
+        <p class="eyebrow">Киллер-фичи</p>
+        <h2 class="section-title">Не просто ТОиР. Мозг оборудования.</h2>
+        <p class="section-lead">Программа ТОиР для предприятия: автоматизация технического обслуживания и ремонта без архива PDF. Masterdoc хранит причинно-следственную память ремонтов — каждая фича заточена под доверие, поле и ваш контур данных.</p>
+        <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+      </div>
+
+      <div class="container platform-tabs" role="tablist" aria-label="Киллер-фичи Masterdoc">
+        <button class="platform-tab active" data-platform-tab="memory" role="tab" aria-selected="true">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Память машины
+        </button>
+        <button class="platform-tab" data-platform-tab="verified" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/></svg>
+          Доказуемый ответ
+        </button>
+        <button class="platform-tab" data-platform-tab="loop" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 7l-5 5-5-5M17 17l-5-5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ремонт → знание
+        </button>
+        <button class="platform-tab" data-platform-tab="copilot" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M11 18h2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Помощник в поле
+        </button>
+        <button class="platform-tab" data-platform-tab="secure" role="tab" aria-selected="false">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l7 4v5c0 4.4-3 8.5-7 9-4-.5-7-4.6-7-9V7l7-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          Ваш контур данных
+        </button>
+      </div>
+
+      <div class="platform-panels">
+        <article class="platform-panel active" data-platform-panel="memory">
+          <div class="container platform-panel-grid">
+            <div class="platform-copy">
+              <p class="panel-tag">Память каждой машины</p>
+              <h3 class="panel-title">Живая техническая память оборудования.</h3>
+              <p class="panel-text">У каждой машины — не карточка, а граф: узел → симптом → причина → действие → запчасть → результат. Сканируйте QR и видите историю поломок, что помогло и кто подтвердил решение.</p>
+              <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+            </div>
+            <div class="feature-mock feature-mock--memory" aria-hidden="true">
+              <div class="fm-card fm-card--main">
+                <div class="fm-head">
+                  <span class="fm-badge">Компрессор К-47</span>
+                  <span class="fm-pill fm-pill--green">6 кейсов</span>
+                </div>
+                <p class="fm-title">Ошибка P-17 — история</p>
+                <div class="fm-chain">
+                  <span class="fm-node">Симптом</span>
+                  <span class="fm-arrow">→</span>
+                  <span class="fm-node fm-node--accent">P-17</span>
+                  <span class="fm-arrow">→</span>
+                  <span class="fm-node">Причина</span>
+                  <span class="fm-arrow">→</span>
+                  <span class="fm-node fm-node--hot">Датчик давления</span>
+                </div>
+                <div class="fm-stats">
+                  <div><strong>4×</strong> датчик</div>
+                  <div><strong>1×</strong> фильтр</div>
+                  <div><strong>1×</strong> калибровка</div>
+                </div>
+                <p class="fm-foot">Регламент v2.4 · раздел 5.3 · подтверждено экспертом</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="platform-panel" data-platform-panel="verified">
+          <div class="container platform-panel-grid">
+            <div class="platform-copy">
+              <p class="panel-tag">Доказуемый ответ</p>
+              <h3 class="panel-title">Не «ИИ сказал», а «ИИ показал, почему».</h3>
+              <p class="panel-text">Каждый ответ — с источником, версией документа, фрагментом инструкции и уровнем уверенности. Если данных недостаточно — система честно скажет об этом, а не выдаст галлюцинацию.</p>
+              <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+            </div>
+            <div class="feature-mock feature-mock--verified" aria-hidden="true">
+              <div class="fm-card fm-card--main">
+                <p class="fm-q">Как устранить ошибку P-17?</p>
+                <div class="fm-answer">
+                  <p>Начните с проверки датчика давления. Процедура — регламент v2.4, раздел 5.3.</p>
+                </div>
+                <div class="fm-proof">
+                  <div class="fm-proof-row">
+                    <span class="fm-label">Источник</span>
+                    <span>Регламент ТО компрессоров</span>
+                  </div>
+                  <div class="fm-proof-row">
+                    <span class="fm-label">Версия</span>
+                    <span>v2.4 · 12.04.2026</span>
+                  </div>
+                  <div class="fm-proof-row">
+                    <span class="fm-label">Уверенность</span>
+                    <span class="fm-conf">94%</span>
+                  </div>
+                </div>
+                <p class="fm-foot fm-foot--ok">✓ Похожий кейс подтверждён 4 раза</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="platform-panel" data-platform-panel="loop">
+          <div class="container platform-panel-grid">
+            <div class="platform-copy">
+              <p class="panel-tag">Ремонт → знание</p>
+              <h3 class="panel-title">Каждый ремонт усиливает систему.</h3>
+              <p class="panel-text">После ремонта техник фиксирует результат голосом или короткими отметками. Masterdoc собирает отчёт, кейс и предлагает старшему инженеру обновить инструкцию или связать симптом с причиной.</p>
+              <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+            </div>
+            <div class="feature-mock feature-mock--loop" aria-hidden="true">
+              <div class="fm-card fm-card--voice">
+                <span class="fm-voice-label">Голос</span>
+                <p>«Заменил датчик давления, ошибка P-17 снята»</p>
+              </div>
+              <div class="fm-flow">
+                <span class="fm-flow-item">Отчёт</span>
+                <span class="fm-flow-arrow">↓</span>
+                <span class="fm-flow-item">История</span>
+                <span class="fm-flow-arrow">↓</span>
+                <span class="fm-flow-item fm-flow-item--accent">Новый кейс</span>
+              </div>
+              <div class="fm-card fm-card--prompt">
+                <p class="fm-prompt-q">Добавить как подтверждённый кейс?</p>
+                <div class="fm-prompt-actions">
+                  <span class="fm-btn fm-btn--ghost">Обновить инструкцию</span>
+                  <span class="fm-btn fm-btn--primary">Подтвердить</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="platform-panel" data-platform-panel="copilot">
+          <div class="container platform-panel-grid">
+            <div class="platform-copy">
+              <p class="panel-tag">Помощник в поле</p>
+              <h3 class="panel-title">Пошаговая диагностика у оборудования.</h3>
+              <p class="panel-text">Не чат, а режим работы рядом с машиной: сканируете QR, описываете проблему — система ведёт по проверкам шаг за шагом, просит фото и меняет сценарий по результату.</p>
+              <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+            </div>
+            <div class="feature-mock feature-mock--copilot" aria-hidden="true">
+              <div class="fm-phone">
+                <div class="fm-phone-bar">
+                  <span>Компрессор К-47</span>
+                  <span class="fm-pill fm-pill--blue">Шаг 2 из 5</span>
+                </div>
+                <p class="fm-phone-q">Что случилось?</p>
+                <p class="fm-phone-a">Ошибка P-17, давление не держится</p>
+                <div class="fm-step fm-step--active">
+                  <span class="fm-step-num">2</span>
+                  <div>
+                    <p class="fm-step-title">Проверьте датчик давления</p>
+                    <p class="fm-step-hint">Сделайте фото показаний манометра</p>
+                  </div>
+                </div>
+                <div class="fm-step">
+                  <span class="fm-step-num">3</span>
+                  <p class="fm-step-title">Измерьте сопротивление датчика</p>
+                </div>
+                <span class="fm-btn fm-btn--primary fm-btn--wide">Следующий шаг</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="platform-panel" data-platform-panel="secure">
+          <div class="container platform-panel-grid">
+            <div class="platform-copy">
+              <p class="panel-tag">Ваш контур данных</p>
+              <h3 class="panel-title">Документация остаётся у вас.</h3>
+              <p class="panel-text">On-premise, private cloud или read-only коннекторы — Masterdoc подключается внутри вашего контура. Журнал запросов, роли, запрет обучения на ваших данных.</p>
+              <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+            </div>
+            <div class="feature-mock feature-mock--secure" aria-hidden="true">
+              <div class="fm-perimeter">
+                <span class="fm-perimeter-label">Контур клиента</span>
+                <div class="fm-perimeter-inner">
+                  <div class="fm-vault">
+                    <span class="fm-vault-icon" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="10" rx="2" stroke="#93c5fd" stroke-width="1.8"/><path d="M8 11V8a4 4 0 018 0v3" stroke="#93c5fd" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    </span>
+                    <p>Регламенты · Схемы · История ремонтов</p>
+                  </div>
+                  <div class="fm-connector">
+                    <span class="fm-connector-line"></span>
+                    <span class="fm-connector-node">Masterdoc</span>
+                  </div>
+                  <ul class="fm-secure-list">
+                    <li>На ваших серверах / VPC</li>
+                    <li>Без обучения на данных</li>
+                    <li>Журнал всех запросов</li>
+                    <li>Только разрешённые источники</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="fm-secure-tagline">Мы не забираем ваши знания — делаем их доступными вашим сотрудникам</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature-radar">
+      <div class="container">
+        <p class="eyebrow">Радар повторяющихся поломок</p>
+        <h2 class="section-title">Видите, где система ломается снова.</h2>
+        <p class="section-lead section-lead--narrow">Система контроля простоя оборудования на истории ремонтов — без обязательного IoT. Masterdoc находит повторяющиеся паттерны в заявках, отчётах и программах учёта ремонта оборудования.</p>
+
+        <div class="radar-mock" aria-hidden="true">
+          <div class="radar-mock__head">
+            <span class="radar-mock__title">Обнаружено 3 паттерна</span>
+            <span class="radar-mock__period">За последние 3 месяца</span>
+          </div>
+          <ul class="radar-alerts">
+            <li class="radar-alert radar-alert--high">
+              <span class="radar-alert__badge">Высокий риск</span>
+              <p class="radar-alert__text">У компрессоров типа К участились ошибки <strong>E-42</strong> после <strong>700–900</strong> часов работы</p>
+              <span class="radar-alert__meta">12 кейсов · 4 площадки</span>
+            </li>
+            <li class="radar-alert radar-alert--medium">
+              <span class="radar-alert__badge">Отклонение</span>
+              <p class="radar-alert__text">На <strong>линии №3</strong> фильтр меняется в <strong>2 раза</strong> чаще, чем на линии №1</p>
+              <span class="radar-alert__meta">Сравнение линий · запчасти</span>
+            </li>
+            <li class="radar-alert radar-alert--warn">
+              <span class="radar-alert__badge">Повтор</span>
+              <p class="radar-alert__text">После ремонта по регламенту <strong>v2.1</strong> проблема возвращается через <strong>10–14</strong> дней</p>
+              <span class="radar-alert__meta">Рекомендация: проверить v3.0</span>
+            </li>
+          </ul>
+          <div class="radar-mock__foot">
+            <span>Источник: заявки · отчёты · 1С · системы ТОиР</span>
+            <span class="radar-mock__cta">Создать превентивную задачу →</span>
+          </div>
+        </div>
+
+        <div class="feature-cards">
+          <article class="feature-card">
+            <h3>Без датчиков на старте</h3>
+            <p>Не нужен полный predictive maintenance с IoT. Достаточно истории ремонтов, заявок и документации — Masterdoc вытащит из них практическую аналитику.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Паттерны, а не отчёты</h3>
+            <p>Система сама подсвечивает: где ошибка повторяется, где деталь «сгорает» быстрее нормы, где инструкция не срабатывает.</p>
+          </article>
+          <article class="feature-card">
+            <h3>От реакции к профилактике</h3>
+            <p>Не только «чиним быстрее», а «видим, где ломается регулярно» — и действуем до следующего простоя.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="killer-more">
+      <div class="container">
+        <p class="eyebrow">Ещё возможности</p>
+        <h2 class="section-title">Всё, что нужно инженеру-технику в поле и в цеху</h2>
+        <p class="section-lead section-lead--narrow">copilot ведёт по ремонту у машины. Остальные модули закрывают документы, запчасти, эскалацию и работу без сети.</p>
+
+        <article class="killer-feature killer-feature--hero">
+          <div class="killer-feature__copy">
+            <p class="panel-tag">copilot по ремонту</p>
+            <h3 class="killer-feature__title">Пошаговый помощник инженера-техника у оборудования</h3>
+            <p class="killer-feature__text">Не чат, а режим работы рядом с машиной: сканируете шильдик, описываете симптом голосом или фото — Masterdoc определяет код ошибки, показывает вероятные причины и ведёт по проверкам шаг за шагом. В конце — готовый отчёт.</p>
+            <ul class="killer-feature__list">
+              <li>Динамическая инструкция вместо PDF-простыни</li>
+              <li>Фото и замеры меняют следующий шаг</li>
+              <li>Особенно ценно для новых сотрудников и выездных бригад</li>
+            </ul>
+          </div>
+          <div class="killer-mini-mock killer-mini-mock--copilot" aria-hidden="true">
+            <div class="km-phone">
+              <div class="km-phone-bar">
+                <span>Насос Н-12 · цех 3</span>
+                <span class="fm-pill fm-pill--blue">Шаг 3 из 6</span>
+              </div>
+              <p class="km-label">Симптом</p>
+              <p class="km-value">Вибрация, код V-08</p>
+              <div class="km-step km-step--active">
+                <span class="fm-step-num">3</span>
+                <div>
+                  <p class="fm-step-title">Проверьте крепление муфты</p>
+                  <p class="fm-step-hint">Сделайте фото места соединения</p>
+                </div>
+              </div>
+              <div class="km-step">
+                <span class="fm-step-num">4</span>
+                <p class="fm-step-title">Замерьте биение вала</p>
+              </div>
+              <span class="fm-btn fm-btn--primary fm-btn--wide">Следующий шаг</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="killer-more-grid">
+          <article class="killer-feature">
+            <div class="killer-mini-mock killer-mini-mock--conflict" aria-hidden="true">
+              <p class="km-conflict-title">⚠ Противоречие в документах</p>
+              <div class="km-doc km-doc--old">
+                <span>Регламент v2.1</span>
+                <span>Фильтр · каждые 500 ч</span>
+              </div>
+              <div class="km-doc km-doc--new">
+                <span>Инструкция v3.0 · 12.04.2026</span>
+                <span>Фильтр · каждые 750 ч</span>
+              </div>
+              <p class="km-foot">Актуальна: v3.0</p>
+            </div>
+            <h3>Детектор противоречий</h3>
+            <p>Находит конфликты между версиями регламентов, инструкциями производителя и реальными ремонтными кейсами. Masterdoc — не просто поиск, а контроль качества технической базы.</p>
+          </article>
+
+          <article class="killer-feature">
+            <div class="killer-mini-mock killer-mini-mock--parts" aria-hidden="true">
+              <p class="km-part-id">Датчик ДП-204 · арт. 88412</p>
+              <div class="km-part-rows">
+                <div><span>Узел</span><span>Компрессор К-47</span></div>
+                <div><span>Замен</span><span>14 за 2 года</span></div>
+                <div><span>Аналог</span><span>ДП-204А ✓</span></div>
+                <div><span>Отказ</span><span>ДП-199 ✗ повтор</span></div>
+              </div>
+              <p class="km-foot">Инструкция по замене · раздел 4.2</p>
+            </div>
+            <h3>Умные запчасти</h3>
+            <p>Деталь связана с оборудованием, узлом, ошибкой и историей замен. Сфотографируйте шильдик — увидите аналоги, ограничения и что уже приводило к повторным отказам.</p>
+          </article>
+
+          <article class="killer-feature">
+            <div class="killer-mini-mock killer-mini-mock--handoff" aria-hidden="true">
+              <p class="km-handoff-head">Пакет для старшего инженера</p>
+              <ul class="km-handoff-list">
+                <li>Насос Н-12 · вибрация V-08</li>
+                <li>Проверено: муфта, подшипник</li>
+                <li>Не помогло: балансировка</li>
+                <li>3 похожих кейса · 2 причины</li>
+              </ul>
+              <p class="km-foot">5 вопросов к эксперту сформированы</p>
+            </div>
+            <h3>Умная эскалация</h3>
+            <p>Когда техник не справляется — не «обратитесь к специалисту», а готовая диагностическая карточка: симптом, фото, что проверено, похожие кейсы и список вопросов эксперту.</p>
+          </article>
+
+          <article class="killer-feature">
+            <div class="killer-mini-mock killer-mini-mock--offline" aria-hidden="true">
+              <div class="km-offline-bar">
+                <span class="km-offline-badge">Офлайн</span>
+                <span>Критичное оборудование</span>
+              </div>
+              <ul class="km-offline-list">
+                <li>✓ Аварийные процедуры</li>
+                <li>✓ Схемы и чек-листы</li>
+                <li>✓ Последние 5 кейсов</li>
+                <li>✓ Контакты ответственных</li>
+              </ul>
+              <p class="km-foot">Обновлено 2 ч назад · 24 МБ</p>
+            </div>
+            <h3>Аварийный офлайн-пакет</h3>
+            <p>Инструкции, схемы, типовые ошибки и кейсы — заранее упакованы под конкретную машину. Даже без сети в цеху или на удалённой площадке критичные знания остаются в кармане.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro">
+          <p class="eyebrow">Почему Masterdoc</p>
+          <h2 class="section-title">Не архив заявок. Мозг оборудования.</h2>
+          <p class="section-lead">Ответы о программе автоматизации технического обслуживания Masterdoc — чем система ТОиР отличается от обычного учёта ремонтов и «болтливого» ИИ.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-q" aria-expanded="true">Чем Masterdoc отличается от обычного ТОиР?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Большинство систем хранят заявки и документы. Masterdoc строит живую память каждой машины: симптом → причина → действие → запчасть → результат → источник. Техник сканирует QR и видит не PDF, а историю — что ломалось, что помогло и кто подтвердил решение.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Можно ли доверять ответам ИИ?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>На заводе доверие важнее «вау-ответов». Masterdoc показывает источник, версию документа, фрагмент инструкции и уровень уверенности. Если данных нет — система честно скажет «недостаточно данных», а не выдаст уверенную галлюцинацию. Не «ИИ сказал», а «ИИ показал, почему».</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Что происходит с опытом после ремонта?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Обычно знания теряются в голове техника, чате или плохо заполненной заявке. После ремонта Masterdoc собирает отчёт, кейс и историю оборудования — и предлагает старшему инженеру подтвердить кейс или обновить инструкцию. Чем больше завод пользуется системой, тем умнее становится его собственная техническая память.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Как copilot помогает у оборудования?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Это не чат, а режим работы рядом с машиной. Сканируете шильдик, описываете симптом — copilot ведёт по диагностике шаг за шагом, просит фото и меняет сценарий по результату. Инструкция становится динамической, а не статичной PDF-простынёй. Особенно ценно для новых сотрудников и выездных бригад.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Останутся ли документы в нашем контуре?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Главный страх завода — отдать регламенты, схемы и историю поломок наружу. Masterdoc подключается внутри вашего контура: on-premise, private cloud, read-only коннекторы, журнал запросов и запрет обучения моделей на ваших данных. Мы не забираем ваши знания — делаем их управляемо доступными сотрудникам.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">Нужны ли датчики для аналитики поломок?<span class="faq-icon">+</span></button>
+            <div class="faq-a"><p>Нет — на старте. Радар повторяющихся поломок работает на истории ремонтов, заявках, отчётах и документации из 1С и других систем ТОиР. Система сама находит паттерны: где ошибка повторяется, где деталь «сгорает» быстрее нормы, где старый регламент не срабатывает. Не «чиним быстрее», а «видим, где ломается регулярно».</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container cta-banner-inner">
+        <h2 class="section-title section-title--light">Автоматизация технического обслуживания и ремонта</h2>
+        <p>Masterdoc — платная система автоматизации ТОиР для завода и сети объектов: программы учёта ремонта оборудования, документация и copilot в одном контуре. Запросите демо.</p>
+        <div class="cta-banner-actions">
+          <a href="#demo" class="btn-primary btn-pill demo-link">Демо</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form" id="demo">
+      <div class="container contact-form-inner">
+        <p class="eyebrow">Обратная связь</p>
+        <h2 class="section-title">Запросить демо</h2>
+        <p class="section-lead section-lead--narrow">Оставьте контакты — покажем Masterdoc на ваших задачах: учёт ремонтов, copilot у оборудования и автоматизация ТОиР.</p>
+        <form class="demo-form" id="demo-form" action="https://formspree.io/f/xzdwwzon" method="POST">
+          <input type="text" name="_gotcha" class="demo-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="_subject" value="Заявка на демо Masterdoc" />
+          <div class="demo-form__grid">
+            <label class="demo-form__field">
+              <span class="demo-form__label">Имя <abbr title="обязательно">*</abbr></span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Иван Петров" />
+            </label>
+            <label class="demo-form__field">
+              <span class="demo-form__label">Телефон <abbr title="обязательно">*</abbr></span>
+              <input type="tel" name="phone" required autocomplete="tel" placeholder="+7 (999) 123-45-67" inputmode="tel" />
+            </label>
+            <label class="demo-form__field">
+              <span class="demo-form__label">Email</span>
+              <input type="email" name="email" autocomplete="email" placeholder="name@company.ru" />
+            </label>
+            <label class="demo-form__field">
+              <span class="demo-form__label">Компания</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Завод или предприятие" />
+            </label>
+          </div>
+          <label class="demo-form__field demo-form__field--full">
+            <span class="demo-form__label">Комментарий</span>
+            <textarea name="message" rows="3" placeholder="Кратко опишите задачу или масштаб"></textarea>
+          </label>
+          <div class="demo-form__actions">
+            <button type="submit" class="btn-primary btn-pill">Отправить заявку</button>
+            <p class="demo-form__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по заявке.</p>
+          </div>
+          <p class="demo-form__status" id="demo-form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><img src="assets/logo-mark.svg" alt="" width="24" height="24" /><span class="logo-text">masterdoc</span></a>
+        <p>© 2026 Masterdoc</p>
+      </div>
+      <div class="footer-cols">
+        <div><strong>Возможности</strong><a href="#">copilot по ремонту</a><a href="#">Детектор противоречий</a><a href="#">Умные запчасти</a></div>
+        <div><strong>Компания</strong><a href="#">О нас</a><a href="#">Карьера</a><a href="#">Контакты</a></div>
+        <div><strong>Поддержка</strong><a href="#">Справка</a><a href="#">Статус</a><a href="#">Политика конфиденциальности</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
