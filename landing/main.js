@@ -51,7 +51,7 @@
         });
 
         if (res.ok) {
-          if (typeof ym === 'function') ym(109476559, 'reachGoal', 'demo_form_submit');
+          if (typeof ym === 'function') ym(109561586, 'reachGoal', 'demo_form_submit');
           demoForm.reset();
           ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
             const el = document.getElementById(key);
