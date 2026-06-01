@@ -31,6 +31,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <!-- Yandex.Metrika counter (общий с lite; в отчётах фильтр по hostname toir.masterdoc.pro) -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a);
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+    ym(109476559, 'init', { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109476559" style="position:absolute;left:-9999px;" alt="" /></div></noscript>
 </head>
 <body>
 
@@ -161,7 +172,6 @@
 
     <section class="platform">
       <div class="container platform-head">
-        <p class="eyebrow">Киллер-фичи</p>
         <h2 class="section-title">Не просто ТОиР. Мозг оборудования.</h2>
         <p class="section-lead">Программа ТОиР для предприятия: автоматизация технического обслуживания и ремонта без архива PDF. Masterdoc хранит причинно-следственную память ремонтов — каждая фича заточена под доверие, поле и ваш контур данных.</p>
         <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
@@ -575,7 +585,12 @@
         <p class="section-lead section-lead--narrow">Оставьте контакты — покажем Masterdoc на ваших задачах: учёт ремонтов, copilot у оборудования и автоматизация ТОиР.</p>
         <form class="demo-form" id="demo-form" action="https://formspree.io/f/xzdwwzon" method="POST">
           <input type="text" name="_gotcha" class="demo-form__honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <input type="hidden" name="_subject" value="Заявка на демо Masterdoc" />
+          <input type="hidden" name="_subject" value="Masterdoc TOiR: заявка с лендинга" />
+          <input type="hidden" name="utm_source" id="utm_source" value="" />
+          <input type="hidden" name="utm_medium" id="utm_medium" value="" />
+          <input type="hidden" name="utm_campaign" id="utm_campaign" value="" />
+          <input type="hidden" name="utm_content" id="utm_content" value="" />
+          <input type="hidden" name="utm_term" id="utm_term" value="" />
           <div class="demo-form__grid">
             <label class="demo-form__field">
               <span class="demo-form__label">Имя <abbr title="обязательно">*</abbr></span>

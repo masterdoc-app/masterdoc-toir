@@ -1,4 +1,11 @@
 (function () {
+  const params = new URLSearchParams(window.location.search);
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
+    const el = document.getElementById(key);
+    const val = params.get(key);
+    if (el && val) el.value = val;
+  });
+
   const tabButtons = document.querySelectorAll('[data-platform-tab]');
   const tabPanels = document.querySelectorAll('[data-platform-panel]');
 
@@ -44,7 +51,13 @@
         });
 
         if (res.ok) {
+          if (typeof ym === 'function') ym(109476559, 'reachGoal', 'demo_form_submit');
           demoForm.reset();
+          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
+            const el = document.getElementById(key);
+            const val = params.get(key);
+            if (el && val) el.value = val;
+          });
           demoFormStatus.textContent = 'Спасибо! Заявка отправлена — свяжемся с вами в ближайшее время.';
           demoFormStatus.classList.add('demo-form__status--ok');
         } else {
