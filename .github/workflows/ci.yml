@@ -27,6 +27,7 @@ jobs:
           test -f landing/index.html
           test -f landing/styles.css
           test -f landing/main.js
+          test -f landing/copilot-floor.css
           test -d landing/assets
           echo "Landing OK"
 

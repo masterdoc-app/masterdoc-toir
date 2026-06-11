@@ -29,11 +29,13 @@
     }
   }
   </script>
-  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/logo-mark.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="copilot-floor.css" />
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -53,7 +55,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="logo" aria-label="Fixaverse — на главную">
-        <img src="assets/logo-fixaverse.png" alt="Fixaverse" width="160" height="32" />
+        <img src="assets/logo-fixaverse.png" alt="Fixaverse" width="400" height="80" />
       </a>
 
       <div class="header-actions">
@@ -426,46 +428,279 @@
       </div>
     </section>
 
+    <section class="copilot-floor" id="copilot">
+      <div class="container copilot-floor__grid">
+        <div class="copilot-floor__copy">
+          <p class="eyebrow">copilot по ремонту</p>
+          <h2 class="section-title">Пошаговый помощник у оборудования</h2>
+          <p class="section-lead">Не чат, а режим работы рядом с машиной: сканируете шильдик, описываете симптом голосом — Fixaverse ведёт по диагностике шаг за шагом и собирает отчёт.</p>
+          <ul class="killer-feature__list">
+            <li>Динамическая инструкция вместо PDF-простыни</li>
+            <li>Фото и замеры меняют следующий шаг</li>
+            <li>Каждый ремонт сохраняется в память оборудования</li>
+          </ul>
+          <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
+        </div>
+        <div class="copilot-floor__visual">
+          <div class="phone-stage" id="copilotPhoneStage">
+                  <span class="phone-tag t1">В эфире · 02:14</span>
+                  <span class="phone-tag t2">Голос или текст</span>
+
+                  <!-- ============ PHONE ============ -->
+                  <div class="phone" role="img" aria-label="Приложение Fixaverse для оператора — интерактивный прототип">
+                    <div class="notch"></div>
+                    <div class="screen">
+                      <div class="status">
+                        <span>2:14</span>
+                        <span class="right">
+                          <span class="bars"><i></i><i></i><i></i><i></i></span>
+                          <span style="font-size:9px;letter-spacing:.05em">LTE</span>
+                          <span class="batt"><i></i></span>
+                        </span>
+                      </div>
+
+                      <!-- Screen 1 — QR scan -->
+                      <div class="scr" data-screen="2">
+                        <div class="qr">
+                          <div class="qr-viewer">
+                            <div class="qr-found">НАЙДЕНО</div>
+                            <svg class="qr-code" viewBox="0 0 29 29" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="29" height="29" fill="#FBF8F3"/>
+                              <g fill="#1A1814">
+                                <rect x="0" y="0" width="7" height="7"/>
+                                <rect x="22" y="0" width="7" height="7"/>
+                                <rect x="0" y="22" width="7" height="7"/>
+                              </g>
+                              <g fill="#FBF8F3">
+                                <rect x="1" y="1" width="5" height="5"/>
+                                <rect x="23" y="1" width="5" height="5"/>
+                                <rect x="1" y="23" width="5" height="5"/>
+                              </g>
+                              <g fill="#1A1814">
+                                <rect x="2" y="2" width="3" height="3"/>
+                                <rect x="24" y="2" width="3" height="3"/>
+                                <rect x="2" y="24" width="3" height="3"/>
+                                <rect x="9" y="2" width="1" height="1"/><rect x="11" y="2" width="2" height="1"/>
+                                <rect x="14" y="2" width="1" height="1"/><rect x="17" y="2" width="2" height="1"/>
+                                <rect x="20" y="2" width="1" height="1"/>
+                                <rect x="9" y="4" width="2" height="1"/><rect x="13" y="4" width="1" height="1"/>
+                                <rect x="15" y="4" width="2" height="1"/><rect x="19" y="4" width="2" height="1"/>
+                                <rect x="8" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/>
+                                <rect x="12" y="6" width="1" height="1"/><rect x="14" y="6" width="1" height="1"/>
+                                <rect x="16" y="6" width="1" height="1"/><rect x="18" y="6" width="1" height="1"/>
+                                <rect x="20" y="6" width="1" height="1"/>
+                                <rect x="6" y="8" width="1" height="1"/><rect x="6" y="10" width="1" height="1"/>
+                                <rect x="6" y="12" width="1" height="1"/><rect x="6" y="14" width="1" height="1"/>
+                                <rect x="6" y="16" width="1" height="1"/><rect x="6" y="18" width="1" height="1"/>
+                                <rect x="6" y="20" width="1" height="1"/>
+                                <rect x="8" y="8" width="2" height="1"/><rect x="11" y="8" width="1" height="2"/>
+                                <rect x="13" y="8" width="2" height="2"/><rect x="16" y="8" width="1" height="1"/>
+                                <rect x="18" y="8" width="2" height="1"/><rect x="21" y="8" width="1" height="2"/>
+                                <rect x="23" y="8" width="1" height="1"/><rect x="25" y="8" width="2" height="1"/>
+                                <rect x="9" y="10" width="1" height="2"/><rect x="12" y="10" width="2" height="1"/>
+                                <rect x="15" y="10" width="1" height="2"/><rect x="17" y="10" width="2" height="2"/>
+                                <rect x="20" y="10" width="1" height="1"/><rect x="22" y="10" width="1" height="2"/>
+                                <rect x="24" y="10" width="2" height="1"/><rect x="27" y="10" width="1" height="2"/>
+                                <rect x="8" y="11" width="1" height="2"/><rect x="10" y="12" width="2" height="1"/>
+                                <rect x="13" y="12" width="1" height="1"/><rect x="16" y="12" width="1" height="2"/>
+                                <rect x="19" y="12" width="1" height="1"/><rect x="21" y="12" width="2" height="1"/>
+                                <rect x="24" y="12" width="1" height="2"/><rect x="26" y="12" width="1" height="1"/>
+                                <rect x="11" y="13" width="2" height="1"/><rect x="14" y="13" width="1" height="2"/>
+                                <rect x="17" y="13" width="1" height="1"/><rect x="19" y="13" width="2" height="2"/>
+                                <rect x="23" y="13" width="1" height="1"/><rect x="25" y="13" width="1" height="2"/>
+                                <rect x="8" y="14" width="1" height="1"/><rect x="10" y="14" width="1" height="2"/>
+                                <rect x="12" y="14" width="1" height="1"/><rect x="22" y="14" width="1" height="1"/>
+                                <rect x="27" y="14" width="1" height="1"/>
+                                <rect x="9" y="15" width="1" height="1"/><rect x="12" y="15" width="2" height="1"/>
+                                <rect x="16" y="15" width="2" height="1"/><rect x="20" y="15" width="1" height="2"/>
+                                <rect x="24" y="15" width="1" height="1"/><rect x="26" y="15" width="2" height="1"/>
+                                <rect x="8" y="16" width="2" height="1"/><rect x="11" y="16" width="1" height="2"/>
+                                <rect x="14" y="16" width="1" height="2"/><rect x="17" y="16" width="2" height="1"/>
+                                <rect x="21" y="16" width="2" height="1"/><rect x="25" y="16" width="1" height="2"/>
+                                <rect x="9" y="17" width="1" height="1"/><rect x="13" y="17" width="1" height="1"/>
+                                <rect x="16" y="17" width="1" height="2"/><rect x="19" y="17" width="1" height="1"/>
+                                <rect x="22" y="17" width="2" height="1"/><rect x="27" y="17" width="1" height="1"/>
+                                <rect x="8" y="18" width="1" height="2"/><rect x="10" y="18" width="2" height="1"/>
+                                <rect x="13" y="18" width="2" height="1"/><rect x="18" y="18" width="2" height="2"/>
+                                <rect x="21" y="18" width="1" height="1"/><rect x="23" y="18" width="1" height="2"/>
+                                <rect x="26" y="18" width="1" height="1"/>
+                                <rect x="12" y="19" width="1" height="1"/><rect x="15" y="19" width="1" height="1"/>
+                                <rect x="17" y="19" width="1" height="1"/><rect x="22" y="19" width="1" height="2"/>
+                                <rect x="25" y="19" width="2" height="1"/>
+                                <rect x="9" y="20" width="2" height="1"/><rect x="12" y="20" width="2" height="1"/>
+                                <rect x="15" y="20" width="1" height="2"/><rect x="17" y="20" width="2" height="1"/>
+                                <rect x="20" y="20" width="1" height="2"/><rect x="24" y="20" width="1" height="2"/>
+                                <rect x="26" y="20" width="1" height="2"/>
+                                <rect x="8" y="22" width="1" height="2"/><rect x="10" y="22" width="1" height="1"/>
+                                <rect x="13" y="22" width="2" height="1"/><rect x="16" y="22" width="1" height="2"/>
+                                <rect x="19" y="22" width="1" height="1"/><rect x="22" y="22" width="2" height="2"/>
+                                <rect x="25" y="22" width="1" height="1"/><rect x="27" y="22" width="1" height="2"/>
+                                <rect x="9" y="23" width="1" height="1"/><rect x="11" y="23" width="2" height="1"/>
+                                <rect x="14" y="23" width="1" height="2"/><rect x="17" y="23" width="2" height="1"/>
+                                <rect x="20" y="23" width="2" height="1"/><rect x="25" y="23" width="2" height="1"/>
+                                <rect x="8" y="25" width="2" height="1"/><rect x="11" y="25" width="1" height="2"/>
+                                <rect x="13" y="25" width="1" height="1"/><rect x="15" y="25" width="2" height="1"/>
+                                <rect x="18" y="25" width="1" height="2"/><rect x="20" y="25" width="2" height="2"/>
+                                <rect x="23" y="25" width="1" height="2"/><rect x="26" y="25" width="1" height="1"/>
+                                <rect x="9" y="26" width="1" height="2"/><rect x="12" y="26" width="1" height="1"/>
+                                <rect x="14" y="26" width="2" height="2"/><rect x="17" y="26" width="1" height="1"/>
+                                <rect x="19" y="26" width="1" height="1"/><rect x="22" y="26" width="1" height="2"/>
+                                <rect x="25" y="26" width="1" height="2"/><rect x="27" y="26" width="1" height="2"/>
+                                <rect x="8" y="27" width="1" height="1"/><rect x="11" y="27" width="1" height="1"/>
+                                <rect x="13" y="27" width="2" height="1"/><rect x="16" y="27" width="2" height="1"/>
+                                <rect x="19" y="27" width="2" height="1"/><rect x="24" y="27" width="1" height="1"/>
+                              </g>
+                            </svg>
+                            <div class="qr-scan"></div>
+                            <div class="qr-tag">К-47 · ЛИНИЯ 3</div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Screen 2 — Описание (voice hero) -->
+                      <div class="scr active" data-screen="3">
+                        <div class="app-head">
+                          <span class="back">‹</span>
+                          <div class="station">
+                            <div class="stn-name">Fixaverse · К-47</div>
+                            <div class="stn-line"><span class="live"></span>Голос · активен</div>
+                          </div>
+                          <div class="menu"><i></i><i></i><i></i></div>
+                        </div>
+                        <div class="convo">
+                          <div class="ts">— 02:14 —</div>
+                          <div class="bubble mary"><span class="who">Fixaverse</span>Привет. Что с компрессором?</div>
+                          <div class="bubble user"><span class="micdot"></span><span>падает давление, на экране P-17</span></div>
+                        </div>
+                        <div class="listen-panel">
+                          <div class="lp-rings">
+                            <div class="lp-ring"></div>
+                            <div class="lp-ring r2"></div>
+                            <div class="lp-ring r3"></div>
+                            <div class="lp-mic-btn" aria-hidden="true">
+                              <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+                            </div>
+                          </div>
+                          <div class="lp-label">Слушаю · шумоподавление</div>
+                          <div class="lp-transcribe">Распознаю…</div>
+                        </div>
+                      </div>
+
+                      <!-- Screen 3 — Подсказки -->
+                      <div class="scr" data-screen="4">
+                        <div class="app-head">
+                          <span class="back">‹</span>
+                          <div class="station">
+                            <div class="stn-name">Компрессор К-47 — цех 3</div>
+                            <div class="stn-line"><span class="live"></span>Подключено · Atlas Copco GA90</div>
+                          </div>
+                          <div class="menu"><i></i><i></i><i></i></div>
+                        </div>
+                        <div class="convo">
+                          <div class="ts">— сегодня, 02:14 —</div>
+                          <div class="bubble user">
+                            <span class="micdot"></span>
+                            <span>на экране ошибка P-17</span>
+                          </div>
+                          <div class="voice-attr">
+                            <svg viewBox="0 0 12 8" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="1" width="2" height="6" rx="1"/><rect x="3" y="0" width="2" height="8" rx="1"/><rect x="6" y="2" width="2" height="4" rx="1"/><rect x="9" y="1" width="2" height="6" rx="1"/></svg>
+                            Голос
+                          </div>
+                          <div class="bubble mary">
+                            <span class="who">Fixaverse</span>
+                            Ошибка P-17 обычно — падение давления в ресивере. Сузим круг — попробуйте:
+                          </div>
+                          <div class="opts">
+                            <div class="opt">
+                              <span class="lt">A</span>
+                              <span>Сброс — удерживайте <b style="color:var(--cf-tx);font-weight:600">ПУСК</b> 3&nbsp;сек, затем <b style="color:var(--cf-tx);font-weight:600">СБРОС</b>.</span>
+                            </div>
+                            <div class="opt">
+                              <span class="lt">B</span>
+                              <span>Проверьте датчик давления на выходе — щелчок на цикле.</span>
+                            </div>
+                          </div>
+                          <div class="chip">◉ 82% уверенность · 11 похожих</div>
+                        </div>
+                        <div class="input input-vf">
+                          <div class="kbd-alt" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M20 5H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 5H5v-2h2v2zm10 0H9v-2h8v2zm0-3h-2v-2h2v2zm0-3h-2V8h2v2zm2 6h-1v-2h1v2z"/></svg>
+                          </div>
+                          <span class="vf-hint">Опишите, что происходит</span>
+                          <div class="mic-hero" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <!-- Screen 6 — Решено / fault record -->
+                      <div class="scr" data-screen="6">
+                        <div class="app-head">
+                          <span class="ph-mark" style="background:#16a34a">F</span>
+                          <div class="station">
+                            <div class="stn-name">Запись о сбое</div>
+                            <div class="stn-line" style="color:#16a34a;font-weight:600">◆ Сохранено в базу</div>
+                          </div>
+                          <div class="menu"><i></i><i></i><i></i></div>
+                        </div>
+                        <div class="fault">
+                          <div class="fault-headline">Устранили <b>падение давления P-17</b> из‑за неисправного датчика давления.</div>
+                          <div class="fault-meta">
+                            <span><b>Станция</b> К-47</span>
+                            <span><b>Линия</b> 3</span>
+                            <span><b>Решено</b> 4 мин</span>
+                          </div>
+                          <div class="fault-row">
+                            <div class="lbl">Сообщили</div>
+                            <div class="val">Падение давления, код P-17</div>
+                          </div>
+                          <div class="fault-row">
+                            <div class="lbl">Сделали</div>
+                            <div class="val">Заменили датчик ДП-204</div>
+                          </div>
+                          <div class="fault-row">
+                            <div class="lbl">Причина</div>
+                            <div class="val"><em>«Датчик давления — внести в регламент ТО».</em></div>
+                          </div>
+                          <div class="fault-row">
+                            <div class="lbl">Далее</div>
+                            <div class="val">Проверить фильтр при следующем ТО</div>
+                          </div>
+                          <div class="fault-footer">
+                            <div class="fault-stamp">Сохранено · без эскалации</div>
+                            <div class="fault-actions">
+                              <span class="fault-btn">Поделиться</span>
+                              <span class="fault-btn primary">Готово</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="home-bar"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Wireframe navigation -->
+                <div class="phone-nav">
+                  <button class="nav-btn" data-target="2"><span class="nav-num">01</span><span class="nav-name">Скан</span></button>
+                  <button class="nav-btn active" data-target="3"><span class="nav-num">02</span><span class="nav-name">Описание</span></button>
+                  <button class="nav-btn" data-target="4"><span class="nav-num">03</span><span class="nav-name">Подсказки</span></button>
+                  <button class="nav-btn" data-target="6"><span class="nav-num">04</span><span class="nav-name">Решено</span></button>
+                </div>
+                <div class="phone-hint"><b>Нажмите шаг</b>, чтобы листать прототип</div>
+        </div>
+      </div>
+    </section>
+
+
     <section class="killer-more">
       <div class="container">
         <p class="eyebrow">Ещё возможности</p>
         <h2 class="section-title">Всё, что нужно инженеру-технику в поле и в цеху</h2>
-        <p class="section-lead section-lead--narrow">copilot ведёт по ремонту у машины. Остальные модули закрывают документы, запчасти, эскалацию и работу без сети.</p>
+        <p class="section-lead section-lead--narrow">Дополнительные модули закрывают документы, запчасти, эскалацию и работу без сети.</p>
 
-        <article class="killer-feature killer-feature--hero">
-          <div class="killer-feature__copy">
-            <p class="panel-tag">copilot по ремонту</p>
-            <h3 class="killer-feature__title">Пошаговый помощник инженера-техника у оборудования</h3>
-            <p class="killer-feature__text">Не чат, а режим работы рядом с машиной: сканируете шильдик, описываете симптом голосом или фото — Fixaverse определяет код ошибки, показывает вероятные причины и ведёт по проверкам шаг за шагом. В конце — готовый отчёт.</p>
-            <ul class="killer-feature__list">
-              <li>Динамическая инструкция вместо PDF-простыни</li>
-              <li>Фото и замеры меняют следующий шаг</li>
-              <li>Особенно ценно для новых сотрудников и выездных бригад</li>
-            </ul>
-          </div>
-          <div class="killer-mini-mock killer-mini-mock--copilot" aria-hidden="true">
-            <div class="km-phone">
-              <div class="km-phone-bar">
-                <span>Насос Н-12 · цех 3</span>
-                <span class="fm-pill fm-pill--blue">Шаг 3 из 6</span>
-              </div>
-              <p class="km-label">Симптом</p>
-              <p class="km-value">Вибрация, код V-08</p>
-              <div class="km-step km-step--active">
-                <span class="fm-step-num">3</span>
-                <div>
-                  <p class="fm-step-title">Проверьте крепление муфты</p>
-                  <p class="fm-step-hint">Сделайте фото места соединения</p>
-                </div>
-              </div>
-              <div class="km-step">
-                <span class="fm-step-num">4</span>
-                <p class="fm-step-title">Замерьте биение вала</p>
-              </div>
-              <span class="fm-btn fm-btn--primary fm-btn--wide">Следующий шаг</span>
-            </div>
-          </div>
-        </article>
 
         <div class="killer-more-grid">
           <article class="killer-feature">
@@ -630,7 +865,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#" class="logo logo--footer"><img src="assets/logo-fixaverse.png" alt="Fixaverse" width="140" height="28" /></a>
+        <a href="#" class="logo logo--footer"><img src="assets/logo-fixaverse.png" alt="Fixaverse" width="280" height="56" /></a>
         <p>© 2026 Fixaverse</p>
       </div>
       <div class="footer-cols">

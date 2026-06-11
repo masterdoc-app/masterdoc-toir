@@ -1,0 +1,366 @@
+.copilot-floor {
+  --cf-bg: #ffffff;
+  --cf-s1: #f9fafb;
+  --cf-s2: #eef3ff;
+  --cf-bd: #e5e7eb;
+  --cf-bd2: #c7d8f5;
+  --cf-tx: #0d1b3a;
+  --cf-tx2: #334155;
+  --cf-tx3: #64748b;
+  --cf-accent: #1a6fff;
+  --cf-accent-d: rgba(26,111,255,.09);
+  --cf-accent-b: rgba(26,111,255,.35);
+  --cf-accent-tint: #eef3ff;
+  --cf-accent-soft: #dbe8ff;
+  --cf-navy: #0d1b3a;
+  --cf-ok: #16a34a;
+  --cf-ok-d: rgba(22,163,74,.12);
+  padding: 88px 0;
+  background: linear-gradient(180deg, #ffffff 0%, var(--blue-soft) 100%);
+  border-top: 1px solid var(--border);
+}
+
+.copilot-floor__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.copilot-floor__copy .section-lead { margin-bottom: 28px; }
+
+@media (max-width: 1024px) {
+  .copilot-floor__grid { grid-template-columns: 1fr; gap: 40px; }
+  .copilot-floor { padding: 64px 0; }
+}
+/* ---------- PHONE MOCKUP ---------- */
+.copilot-floor .phone-stage {
+    position:relative;display:flex;justify-content:center;align-items:center;
+    padding:30px 0 10px;
+  }
+.copilot-floor .phone-stage::before {
+    content:'';position:absolute;left:50%;bottom:-30px;width:78%;height:130px;transform:translateX(-50%);
+    background:radial-gradient(ellipse at center, rgba(26,111,255,.18), rgba(26,111,255,0) 70%);
+    filter:blur(14px);pointer-events:none;
+  }
+.copilot-floor .phone-stage::after {
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:
+      linear-gradient(to right, var(--cf-bd) 1px, transparent 1px) left top/22px 100% no-repeat,
+      linear-gradient(to right, var(--cf-bd) 1px, transparent 1px) right top/22px 100% no-repeat;
+    opacity:0;
+  }
+.copilot-floor .phone {
+    --pw:340px;
+    width:var(--pw);
+    aspect-ratio: 9 / 19.2;
+    background:#0d1b3a;
+    border:1px solid #2a2722;
+    border-radius:42px;
+    padding:11px;
+    position:relative;
+    transform:rotate(-2.2deg);
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,.04) inset,
+      0 30px 60px rgba(60,45,25,.18),
+      0 8px 22px rgba(60,45,25,.12),
+      0 0 60px rgba(26,111,255,.10);
+  }
+.copilot-floor .phone::before {
+    content:'';position:absolute;inset:0;border-radius:42px;pointer-events:none;
+    background:linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,.04));
+    mix-blend-mode:overlay;
+  }
+.copilot-floor .phone .notch {
+    position:absolute;top:14px;left:50%;transform:translateX(-50%);
+    width:96px;height:24px;background:#000;border-radius:14px;z-index:3;
+  }
+.copilot-floor .screen {
+    width:100%;height:100%;background:var(--cf-bg);border-radius:32px;
+    overflow:hidden;display:flex;flex-direction:column;position:relative;
+    border:1px solid #1a1815;
+  }
+.copilot-floor .status {
+    height:34px;display:flex;justify-content:space-between;align-items:flex-end;
+    padding:6px 22px 4px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cf-tx);opacity:.85;letter-spacing:.05em;
+  }
+.copilot-floor .status .right {display:flex;gap:5px;align-items:center}
+.copilot-floor .status .bars {display:inline-flex;gap:1.5px;align-items:flex-end}
+.copilot-floor .status .bars i {width:2.5px;background:var(--cf-tx);display:inline-block;border-radius:1px}
+.copilot-floor .status .bars i:nth-child(1) {height:4px;opacity:.7}
+.copilot-floor .status .bars i:nth-child(2) {height:6px;opacity:.85}
+.copilot-floor .status .bars i:nth-child(3) {height:8px}
+.copilot-floor .status .bars i:nth-child(4) {height:10px}
+.copilot-floor .status .batt {width:18px;height:9px;border:1px solid var(--cf-tx);border-radius:2px;position:relative;padding:1px}
+.copilot-floor .status .batt::after {content:'';position:absolute;right:-3px;top:2px;width:1.5px;height:5px;background:var(--cf-tx);border-radius:0 1px 1px 0}
+.copilot-floor .status .batt i {display:block;width:78%;height:100%;background:var(--cf-ok);border-radius:1px}
+
+.copilot-floor .app-head {
+    display:flex;align-items:center;gap:10px;padding:10px 16px 12px;border-bottom:1px solid var(--cf-bd);background:var(--cf-s1);
+  }
+.copilot-floor .app-head .back {font-family:'JetBrains Mono',monospace;color:var(--cf-tx2);font-size:14px}
+.copilot-floor .app-head .station {display:flex;flex-direction:column;flex:1;min-width:0}
+.copilot-floor .app-head .stn-name {font-family:Inter;font-weight:600;font-size:13.5px;color:var(--cf-tx);letter-spacing:-.005em}
+.copilot-floor .app-head .stn-line {font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--cf-tx3);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;display:flex;align-items:center;gap:6px}
+.copilot-floor .app-head .stn-line .live {width:6px;height:6px;border-radius:50%;background:var(--cf-ok);box-shadow:0 0 8px rgba(46,107,62,.55);animation:pulse 2.2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.45}}
+.copilot-floor .app-head .menu {display:flex;flex-direction:column;gap:3px;align-items:center}
+.copilot-floor .app-head .menu i {width:3px;height:3px;border-radius:50%;background:var(--cf-tx2)}
+
+.copilot-floor .convo {
+    flex:1;padding:14px 14px 10px;display:flex;flex-direction:column;gap:10px;overflow:hidden;
+    background:linear-gradient(180deg, var(--cf-bg) 0%, var(--cf-s1) 100%);
+  }
+.copilot-floor .ts {
+    align-self:center;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--cf-tx3);
+    letter-spacing:.12em;text-transform:uppercase;margin:2px 0 4px;
+  }
+.copilot-floor .bubble {
+    max-width:84%;padding:9px 12px;border-radius:14px;font-size:12.5px;line-height:1.45;
+    border:1px solid var(--cf-bd);
+  }
+.copilot-floor .bubble.user {
+    align-self:flex-end;background:var(--cf-navy);color:var(--cf-bg);border-bottom-right-radius:5px;
+    display:inline-flex;align-items:center;gap:8px;border-color:var(--cf-navy);
+  }
+.copilot-floor .bubble.user .micdot {width:6px;height:6px;border-radius:50%;background:var(--cf-accent);box-shadow:0 0 6px var(--cf-accent);flex-shrink:0}
+.copilot-floor .bubble.mary {
+    align-self:flex-start;background:var(--cf-bg);color:var(--cf-tx);border-bottom-left-radius:5px;
+  }
+.copilot-floor .bubble.mary .who {
+    font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--cf-accent);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:5px;font-weight:600;
+  }
+.copilot-floor .opts {display:flex;flex-direction:column;gap:7px;margin-top:4px;align-self:flex-start;width:88%}
+.copilot-floor .opt {
+    border:1px solid var(--cf-bd);background:var(--cf-bg);color:var(--cf-tx);
+    padding:9px 11px;border-radius:10px;font-size:12px;line-height:1.4;display:flex;gap:9px;align-items:flex-start;
+    transition:.18s;cursor:default;
+  }
+.copilot-floor .opt .lt {
+    font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--cf-accent);font-size:11px;
+    border:1px solid var(--cf-accent-b);padding:1px 5px;border-radius:4px;background:var(--cf-accent-soft);flex-shrink:0;
+    line-height:1.2;
+  }
+.copilot-floor .opt:hover {border-color:var(--cf-accent-b);background:var(--cf-accent-soft)}
+
+.copilot-floor .typing {align-self:flex-start;display:flex;gap:3px;padding:8px 12px;background:var(--cf-bg);border:1px solid var(--cf-bd);border-radius:14px;border-bottom-left-radius:5px}
+.copilot-floor .typing i {width:5px;height:5px;border-radius:50%;background:var(--cf-tx2);animation:tdot 1.2s ease-in-out infinite}
+.copilot-floor .typing i:nth-child(2) {animation-delay:.18s}
+.copilot-floor .typing i:nth-child(3) {animation-delay:.36s}
+  @keyframes tdot{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-2px)}}
+
+.copilot-floor .input {
+    border-top:1px solid var(--cf-bd);padding:10px 12px 14px;display:flex;align-items:center;gap:8px;background:var(--cf-s1);
+  }
+.copilot-floor .input .field {
+    flex:1;background:var(--cf-bg);border:1px solid var(--cf-bd);border-radius:18px;padding:9px 12px;
+    font-size:11.5px;color:var(--cf-tx3);font-family:Inter;
+  }
+.copilot-floor .input .mic {
+    width:32px;height:32px;border-radius:50%;background:var(--cf-accent);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 14px rgba(26,111,255,.25);
+  }
+.copilot-floor .input .mic svg {width:14px;height:14px;fill:var(--cf-bg)}
+.copilot-floor .home-bar {height:5px;width:34%;background:var(--cf-bd2);border-radius:3px;align-self:center;margin-bottom:6px;margin-top:2px}
+
+  /* ---------- MULTI-SCREEN WIREFRAMES ---------- */
+.copilot-floor .scr {flex:1;min-height:0;display:none;flex-direction:column;overflow:hidden;background:var(--cf-bg)}
+.copilot-floor .scr.active {display:flex}
+
+.copilot-floor .ph-mark {
+    width:26px;height:26px;border-radius:50%;background:var(--cf-navy);
+    display:flex;align-items:center;justify-content:center;color:var(--cf-bg);
+    font-family:Inter;font-style:italic;font-weight:500;font-size:16px;line-height:1;flex-shrink:0;
+  }
+.copilot-floor .chip {
+    display:inline-flex;align-items:center;gap:5px;
+    font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--cf-tx2);font-weight:600;padding:4px 9px;border-radius:50px;
+    background:var(--cf-s1);border:1px solid var(--cf-bd);align-self:flex-start;
+  }
+.copilot-floor .chip.flare {color:var(--cf-accent);background:var(--cf-accent-soft);border-color:var(--cf-accent-b)}
+
+  /* App-head dark variant for camera screen */
+.copilot-floor .app-head.dark {background:var(--cf-navy);border-color:rgba(251,248,243,.1)}
+.copilot-floor .app-head.dark .stn-name {color:var(--cf-bg)}
+.copilot-floor .app-head.dark .stn-line {color:rgba(251,248,243,.55)}
+.copilot-floor .app-head.dark .back {color:rgba(251,248,243,.6)}
+.copilot-floor .app-head.dark .menu i {background:rgba(251,248,243,.6)}
+
+  /* Recording state */
+.copilot-floor .input .mic.recording {box-shadow:0 0 0 4px var(--cf-accent-tint),0 0 14px rgba(26,111,255,.35);color:var(--cf-bg);font-size:14px;font-weight:700}
+.copilot-floor .input .field.flare {color:var(--cf-accent);font-weight:600}
+
+  /* Голос-first input bar */
+.copilot-floor .input.input-vf {padding:10px 14px 16px;background:var(--cf-s1);gap:10px}
+.copilot-floor .kbd-alt {width:26px;height:26px;display:flex;align-items:center;justify-content:center;opacity:.28;flex-shrink:0}
+.copilot-floor .kbd-alt svg {width:16px;height:16px;fill:var(--cf-tx2)}
+.copilot-floor .vf-hint {flex:1;font-size:11.5px;color:var(--cf-tx3);font-family:Inter,sans-serif;letter-spacing:-.01em;line-height:1.3}
+.copilot-floor .mic-hero {position:relative;width:46px;height:46px;border-radius:50%;background:var(--cf-accent);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(26,111,255,.4);flex-shrink:0}
+.copilot-floor .mic-hero svg {width:20px;height:20px;fill:#fff;position:relative;z-index:1}
+.copilot-floor .mic-hero::before, .copilot-floor .mic-hero::after {content:'';position:absolute;inset:0;border-radius:50%;background:rgba(26,111,255,.12);animation:mic-ring 2s ease-out infinite}
+.copilot-floor .mic-hero::after {animation-delay:1s}
+  @keyframes mic-ring{0%{transform:scale(1);opacity:1}100%{transform:scale(2.5);opacity:0}}
+
+  /* Listening panel — Screen 2 "Описание" hero moment */
+.copilot-floor .listen-panel {padding:14px 14px 18px;display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--cf-s1);border-top:1px solid var(--cf-bd)}
+.copilot-floor .lp-rings {position:relative;width:64px;height:64px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.copilot-floor .lp-ring {position:absolute;inset:0;border-radius:50%;border:1.5px solid rgba(26,111,255,.22);animation:lp-expand 2.2s ease-out infinite}
+.copilot-floor .lp-ring.r2 {animation-delay:.65s}
+.copilot-floor .lp-ring.r3 {animation-delay:1.3s}
+  @keyframes lp-expand{0%{transform:scale(.85);opacity:.6}100%{transform:scale(2.6);opacity:0}}
+.copilot-floor .lp-mic-btn {width:56px;height:56px;border-radius:50%;background:var(--cf-accent);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 3px var(--cf-accent-tint),0 4px 16px rgba(26,111,255,.45);position:relative;z-index:2}
+.copilot-floor .lp-mic-btn svg {width:24px;height:24px;fill:#fff}
+.copilot-floor .lp-label {font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--cf-accent);font-weight:700;display:flex;align-items:center;gap:5px}
+.copilot-floor .lp-label::before {content:'●';animation:lp-blink 1.2s ease-in-out infinite}
+  @keyframes lp-blink{0%,100%{opacity:1}50%{opacity:.25}}
+.copilot-floor .lp-transcribe {font-size:10.5px;color:var(--cf-tx3);font-family:Inter;font-style:italic}
+
+  /* Голос attribution badge */
+.copilot-floor .voice-attr {align-self:flex-end;display:flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--cf-tx3);letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-top:-4px}
+.copilot-floor .voice-attr svg {width:10px;height:10px;fill:var(--cf-tx3);flex-shrink:0}
+
+  /* Hero trust line */
+
+  /* Screen 1 — Home */
+.copilot-floor .home {
+    flex:1;display:flex;flex-direction:column;padding:22px 18px 16px;justify-content:space-between;
+    background:linear-gradient(180deg,var(--cf-bg) 0%,var(--cf-s1) 100%);
+  }
+.copilot-floor .home-hero {font-family:Inter;font-style:italic;font-weight:500;font-size:30px;line-height:1;color:var(--cf-tx);letter-spacing:-.02em}
+.copilot-floor .home-hero em {color:var(--cf-accent);font-style:italic;font-weight:500}
+.copilot-floor .home-sub {font-size:12.5px;color:var(--cf-tx2);margin-top:12px;line-height:1.4;max-width:90%}
+.copilot-floor .home-cta {
+    background:var(--cf-navy);color:var(--cf-bg);border-radius:10px;padding:14px 16px;
+    display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:-.005em;
+  }
+.copilot-floor .home-cta::before {content:'⌗';font-size:18px;line-height:1;color:var(--cf-accent)}
+.copilot-floor .home-alt {
+    text-align:center;font-size:9.5px;color:var(--cf-tx3);margin-top:10px;
+    font-family:'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  }
+
+  /* Screen 2 — QR */
+.copilot-floor .qr {
+    flex:1;display:flex;align-items:center;justify-content:center;
+    background:#0a0a0a;position:relative;padding:22px;overflow:hidden;
+  }
+.copilot-floor .qr::before {
+    content:'';position:absolute;inset:0;
+    background:
+      linear-gradient(135deg,rgba(60,55,50,.6) 0%,rgba(25,22,20,.9) 60%,#0a0a0a 100%),
+      repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 1px,transparent 1px 4px);
+  }
+.copilot-floor .qr-viewer {
+    position:relative;width:100%;aspect-ratio:1/1;
+    border:2px solid var(--cf-accent);border-radius:10px;
+    background:var(--cf-bg);padding:12px;
+    display:flex;align-items:center;justify-content:center;
+  }
+.copilot-floor .qr-viewer::before, .copilot-floor .qr-viewer::after {content:'';position:absolute;width:18px;height:18px;border:2px solid var(--cf-accent);z-index:3}
+.copilot-floor .qr-viewer::before {top:-2px;left:-2px;border-right:0;border-bottom:0}
+.copilot-floor .qr-viewer::after {bottom:-2px;right:-2px;border-left:0;border-top:0}
+.copilot-floor .qr-code {width:100%;height:100%}
+.copilot-floor .qr-scan {position:absolute;left:6%;right:6%;top:42%;height:2px;background:var(--cf-accent);box-shadow:0 0 8px var(--cf-accent),0 0 16px var(--cf-accent);z-index:2}
+.copilot-floor .qr-tag {
+    position:absolute;bottom:-30px;left:50%;transform:translateX(-50%);
+    font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--cf-bg);white-space:nowrap;font-weight:700;background:rgba(0,0,0,.65);padding:5px 10px;border-radius:3px;
+  }
+.copilot-floor .qr-found {
+    position:absolute;top:14px;right:14px;
+    font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;color:var(--cf-accent);
+    padding:5px 9px;background:rgba(26,111,255,.18);border:1px solid var(--cf-accent);
+    border-radius:50px;z-index:3;font-weight:700;text-transform:uppercase;
+  }
+.copilot-floor .qr-found::before {content:'◉ '}
+
+  /* Screen 5 — Photo */
+.copilot-floor .photo {flex:1;display:flex;flex-direction:column;background:var(--cf-navy);padding:14px;position:relative}
+.copilot-floor .photo-vf {flex:1;border:2px solid rgba(251,248,243,.4);border-radius:9px;position:relative;overflow:hidden}
+.copilot-floor .photo-vf svg.machine {width:100%;height:100%;display:block}
+.copilot-floor .photo-vf::after {content:'';position:absolute;inset:26% 30% 30% 34%;border:2px dashed var(--cf-accent);border-radius:4px;pointer-events:none}
+.copilot-floor .photo-reticle {
+    position:absolute;top:14px;left:14px;
+    font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--cf-accent);font-weight:700;padding:5px 9px;background:rgba(26,111,255,.18);border:1px solid var(--cf-accent);
+    border-radius:50px;z-index:3;
+  }
+.copilot-floor .photo-reticle::before {content:'◉ '}
+.copilot-floor .photo-label {
+    position:absolute;top:27%;left:56%;transform:translateY(-50%);
+    font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;font-weight:700;text-transform:uppercase;
+    color:var(--cf-accent);background:rgba(0,0,0,.78);padding:4px 7px;border-radius:3px;white-space:nowrap;
+  }
+.copilot-floor .photo-hint {
+    position:absolute;bottom:64px;left:14px;right:14px;
+    font-size:10.5px;color:var(--cf-bg);text-align:center;
+    font-family:'JetBrains Mono',monospace;letter-spacing:.04em;
+    background:rgba(0,0,0,.72);padding:7px 9px;border-radius:4px;font-weight:500;
+  }
+.copilot-floor .photo-shutter {
+    position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+    width:46px;height:46px;border-radius:50%;background:var(--cf-bg);
+    border:3px solid var(--cf-navy);box-shadow:0 0 0 2px var(--cf-bg);
+  }
+
+  /* Screen 6 — Запись о сбое */
+.copilot-floor .fault {flex:1;padding:14px 16px;background:var(--cf-bg);overflow:hidden;display:flex;flex-direction:column;gap:9px}
+.copilot-floor .fault-headline {font-family:Inter;font-style:italic;font-weight:500;font-size:16px;line-height:1.25;color:var(--cf-tx);letter-spacing:-.01em}
+.copilot-floor .fault-headline b {font-style:normal;color:var(--cf-accent);font-weight:600}
+.copilot-floor .fault-meta {display:flex;gap:10px;flex-wrap:wrap;font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--cf-tx2);font-weight:600}
+.copilot-floor .fault-meta b {color:var(--cf-tx);font-weight:700}
+.copilot-floor .fault-row {display:grid;grid-template-columns:50px 1fr;gap:8px;align-items:baseline;padding:6px 0;border-top:1px solid var(--cf-bd)}
+.copilot-floor .fault-row:first-of-type {border-top:0;padding-top:2px}
+.copilot-floor .fault-row .lbl {font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:var(--cf-tx2);font-weight:700;line-height:1.3}
+.copilot-floor .fault-row .val {font-size:11px;line-height:1.4;color:var(--cf-tx)}
+.copilot-floor .fault-row .val em {font-family:Inter;font-style:italic;color:var(--cf-tx2);font-size:10.5px}
+.copilot-floor .fault-footer {margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--cf-bd)}
+.copilot-floor .fault-stamp {font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--cf-ok);font-weight:700}
+.copilot-floor .fault-stamp::before {content:'◆ '}
+.copilot-floor .fault-actions {display:flex;gap:5px}
+.copilot-floor .fault-btn {font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.04em;font-weight:600;text-transform:uppercase;padding:5px 9px;border-radius:4px;border:1px solid var(--cf-bd);background:var(--cf-bg);color:var(--cf-tx2)}
+.copilot-floor .fault-btn.primary {background:var(--cf-navy);color:var(--cf-bg);border-color:var(--cf-navy)}
+
+  /* Phone navigation tabs */
+.copilot-floor .phone-nav {
+    margin:18px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;
+    width:100%;max-width:340px;padding:0 4px;
+  }
+.copilot-floor .nav-btn {
+    appearance:none;border:0;background:transparent;cursor:pointer;
+    padding:10px 4px 6px;display:flex;flex-direction:column;align-items:center;gap:4px;
+    border-top:2px solid var(--cf-bd);transition:.15s ease;font-family:inherit;
+  }
+.copilot-floor .nav-btn:hover {border-top-color:var(--cf-tx2)}
+.copilot-floor .nav-btn.active {border-top-color:var(--cf-accent)}
+.copilot-floor .nav-btn .nav-num {font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cf-tx3);font-weight:600;letter-spacing:.06em}
+.copilot-floor .nav-btn.active .nav-num {color:var(--cf-accent)}
+.copilot-floor .nav-btn .nav-name {font-size:9.5px;color:var(--cf-tx2);font-weight:500;letter-spacing:-.005em}
+.copilot-floor .nav-btn.active .nav-name {color:var(--cf-tx);font-weight:700}
+.copilot-floor .phone-hint {
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--cf-tx3);font-weight:500;margin-top:14px;text-align:center;
+  }
+.copilot-floor .phone-hint b {color:var(--cf-accent);font-weight:700}
+
+  /* tag floating next to phone */
+.copilot-floor .phone-tag {
+    position:absolute;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--cf-tx3);
+    letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:8px;
+  }
+.copilot-floor .phone-tag::before {content:'';width:18px;height:1px;background:var(--cf-bd2)}
+.copilot-floor .phone-tag {z-index:4}
+.copilot-floor .phone-tag.t1 {top:14%;right:-12px}
+.copilot-floor .phone-tag.t2 {bottom:14%;left:-140px}
+.copilot-floor .phone-tag.t2::before {order:2;margin-left:8px;margin-right:0}
+
+  @media(max-width:1000px){
+.copilot-floor .phone-tag {display:none}
+.copilot-floor .phone {--pw:300px}
+  }
+  @media(max-width:520px){
+.copilot-floor .phone {--pw:270px}
+  }
+
+  

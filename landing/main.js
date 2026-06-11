@@ -81,4 +81,68 @@
       }
     });
   });
+
+  const copilotFloor = document.querySelector('.copilot-floor');
+  if (copilotFloor) {
+    const buttons = copilotFloor.querySelectorAll('.nav-btn');
+    const screens = copilotFloor.querySelectorAll('.scr');
+    const stage = copilotFloor.querySelector('#copilotPhoneStage');
+    if (buttons.length && screens.length) {
+      const total = buttons.length;
+      let idx = Array.from(buttons).findIndex((b) => b.classList.contains('active'));
+      if (idx < 0) idx = 0;
+      let autoTimer = null;
+      let userPaused = false;
+      let inView = false;
+
+      function show(target) {
+        buttons.forEach((b) => b.classList.toggle('active', b.dataset.target === String(target)));
+        screens.forEach((s) => s.classList.toggle('active', s.dataset.screen === String(target)));
+      }
+      function tick() {
+        idx = (idx + 1) % total;
+        show(buttons[idx].dataset.target);
+      }
+      function startAuto() {
+        if (autoTimer || userPaused || !inView) return;
+        autoTimer = setInterval(tick, 3200);
+      }
+      function stopAuto() {
+        if (autoTimer) {
+          clearInterval(autoTimer);
+          autoTimer = null;
+        }
+      }
+      function pauseFromUser() {
+        userPaused = true;
+        stopAuto();
+      }
+
+      buttons.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          idx = i;
+          show(btn.dataset.target);
+          pauseFromUser();
+        });
+      });
+
+      if (stage) {
+        stage.addEventListener('mouseenter', stopAuto);
+        stage.addEventListener('mouseleave', startAuto);
+      }
+
+      const phoneIO = new IntersectionObserver((ents) => {
+        ents.forEach((en) => {
+          inView = en.isIntersecting;
+          if (inView) startAuto();
+          else stopAuto();
+        });
+      }, { threshold: 0.25 });
+      if (stage) phoneIO.observe(stage);
+
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        userPaused = true;
+      }
+    }
+  }
 })();
