@@ -1,10 +1,10 @@
 :root {
   --white: #ffffff;
-  --text: #0b172a;
+  --text: #0d1b3a;
   --text-muted: #4b5563;
-  --blue: #1264d1;
-  --blue-hover: #0f56b8;
-  --blue-soft: #eef4fd;
+  --blue: #1a6fff;
+  --blue-hover: #1558d6;
+  --blue-soft: #eef3ff;
   --border: #e5e7eb;
   --nav-height: 72px;
   --container: 1280px;
@@ -156,14 +156,12 @@ img {
 }
 
 .logo img {
-  width: 28px;
-  height: 28px;
+  width: auto;
+  height: 32px;
 }
 
-.logo-text {
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.logo--footer img {
+  height: 28px;
 }
 
 .header-actions {
@@ -286,7 +284,7 @@ img {
 
 .ui-pill--blue {
   background: rgba(59, 130, 246, 0.22);
-  color: #93c5fd;
+  color: #7eb8ff;
 }
 
 .ui-order-title {
@@ -358,7 +356,7 @@ img {
 }
 
 .ui-kpi--blue strong {
-  color: #60a5fa;
+  color: #1a6fff;
 }
 
 .ui-kpi--green strong {
@@ -656,7 +654,7 @@ img {
 
 .fm-pill--blue {
   background: rgba(59, 130, 246, 0.22);
-  color: #93c5fd;
+  color: #7eb8ff;
 }
 
 .fm-title {
@@ -686,7 +684,7 @@ img {
 .fm-node--accent {
   background: rgba(59, 130, 246, 0.2);
   border-color: rgba(59, 130, 246, 0.35);
-  color: #93c5fd;
+  color: #7eb8ff;
 }
 
 .fm-node--hot {
@@ -734,7 +732,7 @@ img {
   padding: 14px 16px;
   border-radius: 10px;
   background: rgba(59, 130, 246, 0.12);
-  border-left: 3px solid #3b82f6;
+  border-left: 3px solid #1a6fff;
 }
 
 .fm-answer p {
@@ -787,7 +785,7 @@ img {
   padding: 4px 8px;
   border-radius: 6px;
   background: rgba(59, 130, 246, 0.2);
-  color: #93c5fd;
+  color: #7eb8ff;
   font-size: 0.6875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -813,7 +811,7 @@ img {
 
 .fm-flow-item--accent {
   background: rgba(59, 130, 246, 0.22);
-  color: #93c5fd;
+  color: #7eb8ff;
 }
 
 .fm-flow-arrow {
@@ -968,7 +966,7 @@ img {
   background: #1a2332;
   font-size: 0.6875rem;
   font-weight: 600;
-  color: #93c5fd;
+  color: #7eb8ff;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1122,7 +1120,7 @@ img {
 }
 
 .radar-alert--warn {
-  border-left-color: #3b82f6;
+  border-left-color: #1a6fff;
 }
 
 .radar-alert__badge {
@@ -1148,7 +1146,7 @@ img {
 
 .radar-alert--warn .radar-alert__badge {
   background: rgba(59, 130, 246, 0.2);
-  color: #93c5fd;
+  color: #7eb8ff;
 }
 
 .radar-alert__text {
@@ -1181,7 +1179,7 @@ img {
 }
 
 .radar-mock__cta {
-  color: #93c5fd;
+  color: #7eb8ff;
   font-weight: 600;
 }
 
@@ -1643,7 +1641,7 @@ img {
 /* CTA banner */
 .cta-banner {
   padding: 88px 0;
-  background: linear-gradient(135deg, #0b172a 0%, #1e3a5f 100%);
+  background: linear-gradient(135deg, #0d1b3a 0%, #152a52 100%);
   color: var(--white);
 }
 
