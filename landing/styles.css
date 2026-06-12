@@ -6,7 +6,7 @@
   --blue-hover: #1558d6;
   --blue-soft: #eef3ff;
   --border: #e5e7eb;
-  --nav-height: 130px;
+  --nav-height: 160px;
   --container: 1280px;
   --side-padding: 40px;
   --radius-lg: 20px;
@@ -176,11 +176,11 @@ img {
 
 .logo img {
   width: auto;
-  height: 104px;
+  height: 128px;
 }
 
 .logo--footer img {
-  height: 73px;
+  height: 110px;
 }
 
 .header-actions {
