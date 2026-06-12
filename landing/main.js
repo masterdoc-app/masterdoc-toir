@@ -30,46 +30,161 @@
     );
   }
 
+  const variants = window.AB_VARIANTS || {};
   const params = new URLSearchParams(window.location.search);
 
-  const heroVariants = {
-    trucks: {
-      src: 'assets/hero-bg.jpg',
-      alt: 'Промышленный цех — интерфейс Fixaverse',
-      hideUi: false,
-    },
-    copilot: {
-      src: 'assets/hero-cmms.webp',
-      alt: 'Техник у оборудования с интерфейсом Fixaverse',
-      hideUi: true,
-    },
+  const abState = {
+    layout: 'full',
+    h1: '',
+    eyebrow: '',
+    bullets: '',
+    copy: '',
+    hero: '',
   };
-  const heroKey = params.get('hero');
-  const heroScene = document.querySelector('.hero-scene');
-  const heroPhoto = document.querySelector('.hero-scene__photo');
-  if (heroPhoto && heroKey && heroVariants[heroKey]) {
-    const variant = heroVariants[heroKey];
-    heroPhoto.src = variant.src;
-    heroPhoto.alt = variant.alt;
-    if (variant.hideUi && heroScene) heroScene.classList.add('hero-scene--no-ui');
+
+  function resolveLayout(raw) {
+    if (raw === 'lean') return 'lean';
+    return 'full';
   }
 
-  const copyVariants = {
-    toir: 'Fixaverse — система ТОиР для предприятия на базе ИИ. Управление обслуживанием и ремонтом оборудования: планирование, заказ-наряды и память каждой машины.',
-    uchet: 'Fixaverse — программа учёта ремонтов и обслуживания оборудования. Заказ-наряды, история поломок и документация — без Excel и разрозненных PDF.',
-    auto: 'Fixaverse — автоматизация технического обслуживания и ремонта на предприятии. Copilot у станка: диагностика шаг за шагом, фото и отчёт в одном контуре.',
-  };
-  const copyKey = params.get('copy');
-  const heroDesc = document.querySelector('.hero-desc');
-  if (heroDesc && copyKey && copyVariants[copyKey]) {
-    heroDesc.textContent = copyVariants[copyKey];
+  function applyH1(key) {
+    const el = document.getElementById('hero-h1');
+    if (!el || !key || !variants.h1?.[key]) return;
+    el.textContent = variants.h1[key];
+    abState.h1 = key;
   }
 
-  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
-    const el = document.getElementById(key);
-    const val = params.get(key);
-    if (el && val) el.value = val;
-  });
+  function applyEyebrow(key) {
+    const el = document.getElementById('hero-eyebrow');
+    if (!el || !key) return;
+
+    if (key === 'none') {
+      el.hidden = true;
+      abState.eyebrow = key;
+      return;
+    }
+
+    if (variants.eyebrow?.[key]) {
+      el.textContent = variants.eyebrow[key];
+      el.hidden = false;
+      abState.eyebrow = key;
+    }
+  }
+
+  function applyBullets(key) {
+    const el = document.getElementById('hero-bullets');
+    const items = variants.bullets?.[key];
+    if (!el || !items?.length) return;
+
+    el.replaceChildren();
+    items.forEach((text) => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      el.appendChild(li);
+    });
+    el.hidden = false;
+    abState.bullets = key;
+  }
+
+  function applyCopy(key) {
+    const el = document.getElementById('hero-desc');
+    if (!el || !key || !variants.copy?.[key]) return;
+    el.textContent = variants.copy[key];
+    abState.copy = key;
+  }
+
+  function applyHero(key) {
+    const heroVariant = variants.hero?.[key];
+    const heroScene = document.querySelector('.hero-scene');
+    const heroPhoto = document.querySelector('.hero-scene__photo');
+    if (!heroPhoto || !heroVariant) return;
+
+    heroPhoto.src = heroVariant.src;
+    heroPhoto.alt = heroVariant.alt;
+    if (heroScene) {
+      heroScene.classList.toggle('hero-scene--no-ui', Boolean(heroVariant.hideUi));
+    }
+    abState.hero = key;
+  }
+
+  function renderTrustStrip() {
+    const strip = document.getElementById('trust-strip');
+    const list = document.getElementById('trust-strip-list');
+    if (!strip || !list || !variants.trust?.length) return;
+
+    list.replaceChildren();
+    variants.trust.forEach((text) => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      list.appendChild(li);
+    });
+  }
+
+  function applyLayout(layout) {
+    abState.layout = layout;
+    document.body.classList.toggle('layout-lean', layout === 'lean');
+
+    document.querySelectorAll('[data-ab-hide-layout="lean"]').forEach((section) => {
+      section.hidden = layout === 'lean';
+    });
+
+    document.querySelectorAll('[data-ab-show-layout="lean"]').forEach((section) => {
+      section.hidden = layout !== 'lean';
+    });
+  }
+
+  function fillHiddenFields() {
+    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    utmKeys.forEach((key) => {
+      const el = document.getElementById(key);
+      const val = params.get(key);
+      if (el) el.value = val || '';
+    });
+
+    const abFields = {
+      ab_layout: abState.layout,
+      ab_h1: abState.h1,
+      ab_eyebrow: abState.eyebrow,
+      ab_bullets: abState.bullets,
+      ab_copy: abState.copy,
+      ab_hero: abState.hero,
+    };
+
+    Object.entries(abFields).forEach(([id, value]) => {
+      const el = document.getElementById(id);
+      if (el) el.value = value || '';
+    });
+  }
+
+  function restoreHiddenFieldsAfterReset() {
+    fillHiddenFields();
+  }
+
+  function initAb() {
+    renderTrustStrip();
+
+    const layout = resolveLayout(params.get('layout'));
+    applyLayout(layout);
+
+    const h1Key = params.get('h1');
+    if (h1Key && h1Key !== 'default') applyH1(h1Key);
+
+    const eyebrowKey = params.get('eyebrow');
+    if (eyebrowKey && eyebrowKey !== 'default') applyEyebrow(eyebrowKey);
+
+    const bulletsKey = params.get('bullets');
+    if (bulletsKey) applyBullets(bulletsKey);
+
+    const copyKey = params.get('copy');
+    if (copyKey) applyCopy(copyKey);
+
+    const heroKey = params.get('hero');
+    if (heroKey) applyHero(heroKey);
+
+    fillHiddenFields();
+  }
+
+  initAb();
 
   const tabButtons = document.querySelectorAll('[data-platform-tab]');
   const tabPanels = document.querySelectorAll('[data-platform-panel]');
@@ -118,11 +233,7 @@
         if (res.ok) {
           if (typeof ym === 'function') ym(109561586, 'reachGoal', 'demo_form_submit');
           demoForm.reset();
-          ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
-            const el = document.getElementById(key);
-            const val = params.get(key);
-            if (el && val) el.value = val;
-          });
+          restoreHiddenFieldsAfterReset();
           demoFormStatus.textContent = 'Спасибо! Заявка отправлена — свяжемся с вами в ближайшее время.';
           demoFormStatus.classList.add('demo-form__status--ok');
         } else {

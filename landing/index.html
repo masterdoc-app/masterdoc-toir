@@ -72,15 +72,16 @@
   <main>
     <section class="hero">
       <div class="container">
-        <p class="eyebrow">Связанный. Интеллектуальный. Адаптивный.</p>
+        <p class="eyebrow" id="hero-eyebrow" data-ab="eyebrow">Связанный. Интеллектуальный. Адаптивный.</p>
         <div class="hero-grid">
           <div class="hero-left">
-            <h1 class="hero-title">Первая система ТОиР на&nbsp;основе&nbsp;ИИ</h1>
+            <h1 class="hero-title" id="hero-h1" data-ab="h1">Первая система ТОиР на&nbsp;основе&nbsp;ИИ</h1>
             <div class="hero-cta">
               <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
             </div>
+            <ul class="hero-bullets" id="hero-bullets" data-ab="bullets" hidden></ul>
           </div>
-          <p class="hero-desc">Fixaverse — система управления техническим обслуживанием и ремонтами на базе ИИ. Программа для обслуживания оборудования и учёта ремонтов: заказ-наряды, автоматизация ТОиР и copilot для техников в поле.</p>
+          <p class="hero-desc" id="hero-desc" data-ab="copy">Fixaverse — система управления техническим обслуживанием и ремонтами на базе ИИ. Программа для обслуживания оборудования и учёта ремонтов: заказ-наряды, автоматизация ТОиР и copilot для техников в поле.</p>
         </div>
         <figure class="hero-scene">
           <img class="hero-scene__photo" src="assets/hero-bg.jpg" alt="Промышленный цех — интерфейс Fixaverse" width="1600" height="720" />
@@ -163,7 +164,13 @@
       </div>
     </section>
 
-    <section class="platform">
+    <section class="trust-strip" id="trust-strip" data-ab-show-layout="lean" hidden>
+      <div class="container trust-strip__inner">
+        <ul class="trust-strip__list" id="trust-strip-list"></ul>
+      </div>
+    </section>
+
+    <section class="platform" data-ab-hide-layout="lean">
       <div class="container platform-head">
         <h2 class="section-title">Не просто ТОиР. Мозг оборудования.</h2>
         <p class="section-lead">Программа ТОиР для предприятия: автоматизация технического обслуживания и ремонта без архива PDF. Fixaverse хранит причинно-следственную память ремонтов — каждая фича заточена под доверие, поле и ваш контур данных.</p>
@@ -364,7 +371,7 @@
       </div>
     </section>
 
-    <section class="feature-radar">
+    <section class="feature-radar" data-ab-hide-layout="lean">
       <div class="container">
         <p class="eyebrow">Радар повторяющихся поломок</p>
         <h2 class="section-title">Видите, где система ломается снова.</h2>
@@ -415,7 +422,7 @@
       </div>
     </section>
 
-    <section class="copilot-floor" id="copilot">
+    <section class="copilot-floor" id="copilot" data-ab-hide-layout="lean">
       <div class="container copilot-floor__grid">
         <div class="copilot-floor__copy">
           <p class="eyebrow">copilot по ремонту</p>
@@ -682,7 +689,7 @@
     </section>
 
 
-    <section class="killer-more">
+    <section class="killer-more" data-ab-hide-layout="lean">
       <div class="container">
         <p class="eyebrow">Ещё возможности</p>
         <h2 class="section-title">Всё, что нужно инженеру-технику в поле и в цеху</h2>
@@ -758,7 +765,7 @@
       </div>
     </section>
 
-    <section class="faq" id="faq">
+    <section class="faq" id="faq" data-ab-hide-layout="lean">
       <div class="container faq-grid">
         <div class="faq-intro">
           <p class="eyebrow">Почему Fixaverse</p>
@@ -794,7 +801,7 @@
       </div>
     </section>
 
-    <section class="cta-banner">
+    <section class="cta-banner" data-ab-hide-layout="lean">
       <div class="container cta-banner-inner">
         <h2 class="section-title section-title--light">Автоматизация технического обслуживания и ремонта</h2>
         <p>Fixaverse — платная система автоматизации ТОиР для завода и сети объектов: программы учёта ремонта оборудования, документация и copilot в одном контуре. Запросите демо.</p>
@@ -817,6 +824,12 @@
           <input type="hidden" name="utm_campaign" id="utm_campaign" value="" />
           <input type="hidden" name="utm_content" id="utm_content" value="" />
           <input type="hidden" name="utm_term" id="utm_term" value="" />
+          <input type="hidden" name="ab_layout" id="ab_layout" value="" />
+          <input type="hidden" name="ab_h1" id="ab_h1" value="" />
+          <input type="hidden" name="ab_eyebrow" id="ab_eyebrow" value="" />
+          <input type="hidden" name="ab_bullets" id="ab_bullets" value="" />
+          <input type="hidden" name="ab_copy" id="ab_copy" value="" />
+          <input type="hidden" name="ab_hero" id="ab_hero" value="" />
           <div class="demo-form__grid">
             <label class="demo-form__field">
               <span class="demo-form__label">Имя <abbr title="обязательно">*</abbr></span>
@@ -849,7 +862,7 @@
     </section>
   </main>
 
-  <section class="machines" aria-label="Оборудование и бренды">
+  <section class="machines" aria-label="Оборудование и бренды" data-ab-hide-layout="lean">
     <div class="machines-label">Fixaverse на всём вашем цехе</div>
     <div class="marquee-wrapper">
       <div class="marquee-outer row-1">
@@ -880,6 +893,7 @@
     </div>
   </footer>
 
+  <script src="ab-variants.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
