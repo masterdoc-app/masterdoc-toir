@@ -31,6 +31,29 @@
   }
 
   const params = new URLSearchParams(window.location.search);
+
+  const heroVariants = {
+    trucks: {
+      src: 'assets/hero-bg.jpg',
+      alt: 'Промышленный цех — интерфейс Fixaverse',
+      hideUi: false,
+    },
+    copilot: {
+      src: 'assets/hero-cmms.webp',
+      alt: 'Техник у оборудования с интерфейсом Fixaverse',
+      hideUi: true,
+    },
+  };
+  const heroKey = params.get('hero');
+  const heroScene = document.querySelector('.hero-scene');
+  const heroPhoto = document.querySelector('.hero-scene__photo');
+  if (heroPhoto && heroKey && heroVariants[heroKey]) {
+    const variant = heroVariants[heroKey];
+    heroPhoto.src = variant.src;
+    heroPhoto.alt = variant.alt;
+    if (variant.hideUi && heroScene) heroScene.classList.add('hero-scene--no-ui');
+  }
+
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
     const el = document.getElementById(key);
     const val = params.get(key);

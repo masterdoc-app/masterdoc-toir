@@ -262,6 +262,10 @@ img {
   pointer-events: none;
 }
 
+.hero-scene--no-ui .hero-scene__ui {
+  display: none;
+}
+
 .ui-card {
   position: absolute;
   border-radius: 16px;
@@ -471,57 +475,117 @@ img {
   }
 }
 
-/* Logos */
-.logos {
-  padding: 8px 0 72px;
+/* Machines strip (trust / equipment marquee) */
+.machines {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  background: #f9fafb;
+  overflow: hidden;
 }
 
-.logos-inner {
+.machines-label {
+  margin: 0 0 22px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
   text-align: center;
 }
 
-.logos-label {
-  margin: 0 0 28px;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--blue);
-}
-
-.logos-row {
+.marquee-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 36px 44px;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.logo-word {
-  font-family: Inter, Arial, sans-serif;
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #374151;
-  opacity: 0.72;
-  filter: grayscale(100%);
-  transition: opacity 0.2s ease, filter 0.2s ease;
+.marquee-outer {
+  overflow: hidden;
+  display: flex;
+}
+
+.marquee-outer:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+.marquee-inner {
+  display: flex;
   white-space: nowrap;
+  animation: mq-left 58s linear infinite;
 }
 
-.logo-word--wide {
-  letter-spacing: 0.12em;
+.marquee-inner.right {
+  animation: mq-right 52s linear infinite;
 }
 
-.logo-word--soft {
+@keyframes mq-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes mq-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.mi {
+  display: inline-flex;
+  align-items: center;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 5px 0;
+}
+
+.mi::after {
+  content: "·";
+  margin: 0 18px;
+  color: #c8cfd8;
+  font-size: 14px;
+}
+
+.marquee-outer.row-1 .mi {
+  color: var(--text);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 12.5px;
 }
 
-.logos-row .logo-word:hover {
-  opacity: 1;
-  filter: none;
+.marquee-outer.row-2 .mi {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.machines-sub {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner {
+    animation: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    white-space: normal;
+  }
+
+  .mi::after {
+    margin: 0 10px;
+  }
 }
 
 /* Platform */
