@@ -54,6 +54,17 @@
     if (variant.hideUi && heroScene) heroScene.classList.add('hero-scene--no-ui');
   }
 
+  const copyVariants = {
+    toir: 'Fixaverse — система ТОиР для предприятия на базе ИИ. Управление обслуживанием и ремонтом оборудования: планирование, заказ-наряды и память каждой машины.',
+    uchet: 'Fixaverse — программа учёта ремонтов и обслуживания оборудования. Заказ-наряды, история поломок и документация — без Excel и разрозненных PDF.',
+    auto: 'Fixaverse — автоматизация технического обслуживания и ремонта на предприятии. Copilot у станка: диагностика шаг за шагом, фото и отчёт в одном контуре.',
+  };
+  const copyKey = params.get('copy');
+  const heroDesc = document.querySelector('.hero-desc');
+  if (heroDesc && copyKey && copyVariants[copyKey]) {
+    heroDesc.textContent = copyVariants[copyKey];
+  }
+
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
     const el = document.getElementById(key);
     const val = params.get(key);
