@@ -1,4 +1,35 @@
 (function () {
+  const header = document.querySelector('.site-header');
+  if (header && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let lastY = window.scrollY;
+    let ticking = false;
+    const threshold = 72;
+
+    function updateHeader() {
+      const y = window.scrollY;
+      if (y <= threshold) {
+        header.classList.remove('is-hidden');
+      } else if (y > lastY + 8) {
+        header.classList.add('is-hidden');
+      } else if (y < lastY - 8) {
+        header.classList.remove('is-hidden');
+      }
+      lastY = y;
+      ticking = false;
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          requestAnimationFrame(updateHeader);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+  }
+
   const params = new URLSearchParams(window.location.search);
   ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach((key) => {
     const el = document.getElementById(key);
