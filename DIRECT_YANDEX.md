@@ -1,6 +1,7 @@
 # Яндекс Директ: fixaverse.ru
 
-Минимальный запуск по [WORDSTAT_TOIR_AUTOMATION_LEADS.md](WORDSTAT_TOIR_AUTOMATION_LEADS.md) (без A/B и РСЯ на старте).
+Минимальный запуск по [WORDSTAT_TOIR_AUTOMATION_LEADS.md](WORDSTAT_TOIR_AUTOMATION_LEADS.md).  
+A/B hero и текста на лендинге — [DIRECT_AB_EXPERIMENTS.md](DIRECT_AB_EXPERIMENTS.md).
 
 ## Перед кампанией
 
