@@ -3,6 +3,10 @@
 Минимальный запуск по [WORDSTAT_TOIR_AUTOMATION_LEADS.md](WORDSTAT_TOIR_AUTOMATION_LEADS.md).  
 A/B hero и текста на лендинге — [DIRECT_AB_EXPERIMENTS.md](DIRECT_AB_EXPERIMENTS.md).
 
+**Активная кампания:** [DIRECT_CAMPAIGNS_EXPERIMENT.md](DIRECT_CAMPAIGNS_EXPERIMENT.md) — **Intent Unified** `710786827` (3 группы H1–H3, 1 500 ₽/нед). Остальные кампании остановлены/в архиве.
+
+**Архив:** [DIRECT_CAMPAIGN_710364627.md](DIRECT_CAMPAIGN_710364627.md) — id `710364627`, имя `toir.masterdoc.pro`, остановлена.
+
 ## Перед кампанией
 
 1. **Метрика:** цель JavaScript `demo_form_submit` (уже на лендинге после отправки формы).
@@ -95,10 +99,10 @@ youtube
 | Поле | Текст |
 |------|--------|
 | Тип | **Текстово-графическое** (не комбинаторное, не нейро) |
-| Ссылка | `https://fixaverse.ru/#demo` |
+| Ссылка | `https://fixaverse.ru/` (с UTM; **без** `#demo` — пользователь сначала читает страницу) |
 | Заголовок | Система ТОиР на основе ИИ |
 | Доп. заголовок | Программа учёта ремонтов |
-| Текст | Fixaverse: автоматизация ТО и ремонта на предприятии. Заказ-наряды и copilot для техников. Запросите демо. |
+| Текст | Fixaverse: ТОиР на заводе. Заказ-наряды, учёт ремонтов и ИИ-copilot. |
 | Изображение | `landing/assets/ad-direct-1080x1080.png` |
 | Уточнения / цена / контакты Бизнеса | **не добавлять** (пока без экспериментов) |
 | Кнопка РСЯ | если обязательно: ссылка `https://fixaverse.ru/#demo` |

@@ -1,5 +1,7 @@
 # A/B-эксперименты лендинга fixaverse.ru
 
+**Статус (2026-06-15):** этап A (`copy`) **остановлен** — трафик нецелевой. Creative AB **остановлен** — невалидный тест. Активен только **Intent H1–H3** (тексты объявлений, не параметры URL). История: [DIRECT_CAMPAIGNS_EXPERIMENT.md](DIRECT_CAMPAIGNS_EXPERIMENT.md) §6.
+
 Документ описывает все варианты лендинга, которые можно тестировать в Яндекс Директе через параметры URL.  
 Базовая настройка кампании — в [DIRECT_YANDEX.md](DIRECT_YANDEX.md).
 
@@ -167,16 +169,29 @@ https://fixaverse.ru/?hero=copilot#demo
 
 Не менять несколько параметров в одном этапе — не хватит трафика.
 
-### Этап A — только `copy` (2 недели)
+### Ссылки в объявлениях Директа vs `#demo` на сайте
 
-Одинаковый hero, **четыре объявления**:
+- **В объявлениях** — landing **с верха страницы**, без `#demo`: человек сначала видит hero и текст варианта (`?copy=`, `?hero=` и т.д.), потом сам решает перейти к форме.
+- **`#demo`** — только для кнопок **внутри** лендинга («Запросить демо»), не для входящего трафика из Директа.
+
+### Creative AB (картинки в объявлении) — **остановлен, невалиден**
+
+Кампания `710704391` **SUSPENDED** с 2026-06-12: все объявления с одним креативом G4 — сравнивать нечего.
+
+Возобновлять только при 2–3 **разных** утверждённых изображениях и **после** чистого трафика по Intent (не параллельно с этапом A).
+
+### Этап A — только `copy` — **остановлен 2026-06-15**
+
+Кампания `710704384` **SUSPENDED**. Причина: трафик нецелевой (автотаргетинг), эксперимент невалиден. Итоги 12–15.06: 14 кликов, ~629 ₽, 0 заявок.
+
+Одинаковый hero, **четыре объявления** (архив настроек):
 
 | Объявление | Ссылка |
 |------------|--------|
-| A0 (контроль) | `https://fixaverse.ru/#demo` |
-| A1 | `?copy=toir#demo` |
-| A2 | `?copy=uchet#demo` |
-| A3 | `?copy=auto#demo` |
+| A0 (контроль) | `https://fixaverse.ru/` |
+| A1 | `?copy=toir` |
+| A2 | `?copy=uchet` |
+| A3 | `?copy=auto` |
 
 Тексты объявления в Директе — **одинаковые**.
 
@@ -184,15 +199,15 @@ https://fixaverse.ru/?hero=copilot#demo
 
 | Объявление | Ссылка |
 |------------|--------|
-| B1 | `?copy=<winner>&hero=trucks#demo` |
-| B2 | `?copy=<winner>&hero=copilot#demo` |
+| B1 | `?copy=<winner>&hero=trucks` |
+| B2 | `?copy=<winner>&hero=copilot` |
 
 ### Этап C — `layout` при фиксированном copy/hero (2 недели)
 
 | Объявление | Ссылка |
 |------------|--------|
-| C0 | `?copy=<winner>&hero=<winner>#demo` (full) |
-| C1 | `?copy=<winner>&hero=<winner>&layout=lean#demo` |
+| C0 | `?copy=<winner>&hero=<winner>` (full) |
+| C1 | `?copy=<winner>&hero=<winner>&layout=lean` |
 
 ### Этап D — тезисы по одному (опционально)
 
@@ -255,6 +270,7 @@ https://fixaverse.ru/?layout=lean&copy=toir&bullets=pain#demo
 
 | Файл | Назначение |
 |------|------------|
+| [DIRECT_CAMPAIGNS_EXPERIMENT.md](DIRECT_CAMPAIGNS_EXPERIMENT.md) | Запущенные кампании Copy/Creative AB (ids, объявления) |
 | [DIRECT_YANDEX.md](DIRECT_YANDEX.md) | Кампания, ключи, минус-слова |
 | [WORDSTAT_TOIR_AUTOMATION_LEADS.md](WORDSTAT_TOIR_AUTOMATION_LEADS.md) | Замер частотности ключей |
 | `landing/ab-variants.js` | Реестр текстов и вариантов |
