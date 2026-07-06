@@ -32,6 +32,8 @@
 
   const variants = window.AB_VARIANTS || {};
   const params = new URLSearchParams(window.location.search);
+  const METRIKA_ID = 109561586;
+  const ATTRIB_KEY = 'fv_attrib';
 
   const abState = {
     layout: 'full',
@@ -86,11 +88,51 @@
     abState.bullets = key;
   }
 
+  function readStoredAttrib() {
+    try {
+      return JSON.parse(sessionStorage.getItem(ATTRIB_KEY) || '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function captureAttribFromUrl() {
+    const keys = [
+      'utm_source',
+      'utm_medium',
+      'utm_campaign',
+      'utm_content',
+      'utm_term',
+      'copy',
+      'yclid',
+      'h1',
+      'layout',
+      'eyebrow',
+      'bullets',
+      'hero',
+    ];
+    const stored = readStoredAttrib();
+    let changed = false;
+    keys.forEach((key) => {
+      const val = params.get(key);
+      if (val) {
+        stored[key] = val;
+        changed = true;
+      }
+    });
+    if (changed) sessionStorage.setItem(ATTRIB_KEY, JSON.stringify(stored));
+    return stored;
+  }
+
+  function getAttrib(key) {
+    return params.get(key) || readStoredAttrib()[key] || '';
+  }
+
   function applyCopy(key) {
-    const el = document.getElementById('hero-desc');
-    if (!el || !key || !variants.copy?.[key]) return;
-    el.textContent = variants.copy[key];
+    if (!key) return;
     abState.copy = key;
+    const el = document.getElementById('hero-desc');
+    if (el && variants.copy?.[key]) el.textContent = variants.copy[key];
   }
 
   function applyHero(key) {
@@ -134,25 +176,62 @@
   }
 
   function fillHiddenFields() {
-    const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
-    utmKeys.forEach((key) => {
-      const el = document.getElementById(key);
-      const val = params.get(key);
-      if (el) el.value = val || '';
-    });
+    let utmSource = getAttrib('utm_source');
+    let utmMedium = getAttrib('utm_medium');
+    const utmCampaign = getAttrib('utm_campaign');
+    const utmContent = getAttrib('utm_content');
+    const utmTerm = getAttrib('utm_term');
 
-    const abFields = {
+    if (!utmSource && (getAttrib('yclid') || params.get('etext'))) {
+      utmSource = 'yandex';
+      utmMedium = utmMedium || 'cpc';
+    }
+
+    const fields = {
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      utm_content: utmContent,
+      utm_term: utmTerm,
       ab_layout: abState.layout,
       ab_h1: abState.h1,
       ab_eyebrow: abState.eyebrow,
       ab_bullets: abState.bullets,
-      ab_copy: abState.copy,
+      ab_copy: abState.copy || getAttrib('copy'),
       ab_hero: abState.hero,
     };
 
-    Object.entries(abFields).forEach(([id, value]) => {
+    Object.entries(fields).forEach(([id, value]) => {
       const el = document.getElementById(id);
       if (el) el.value = value || '';
+    });
+  }
+
+  function trackDemoFormSubmit() {
+    return new Promise((resolve) => {
+      let settled = false;
+      const finish = () => {
+        if (settled) return;
+        settled = true;
+        resolve();
+      };
+      const timer = setTimeout(finish, 800);
+
+      if (typeof ym !== 'function') {
+        clearTimeout(timer);
+        finish();
+        return;
+      }
+
+      try {
+        ym(METRIKA_ID, 'reachGoal', 'demo_form_submit', {}, () => {
+          clearTimeout(timer);
+          finish();
+        });
+      } catch {
+        clearTimeout(timer);
+        finish();
+      }
     });
   }
 
@@ -161,24 +240,25 @@
   }
 
   function initAb() {
+    captureAttribFromUrl();
     renderTrustStrip();
 
-    const layout = resolveLayout(params.get('layout'));
+    const layout = resolveLayout(getAttrib('layout'));
     applyLayout(layout);
 
-    const h1Key = params.get('h1');
+    const h1Key = getAttrib('h1');
     if (h1Key && h1Key !== 'default') applyH1(h1Key);
 
-    const eyebrowKey = params.get('eyebrow');
+    const eyebrowKey = getAttrib('eyebrow');
     if (eyebrowKey && eyebrowKey !== 'default') applyEyebrow(eyebrowKey);
 
-    const bulletsKey = params.get('bullets');
+    const bulletsKey = getAttrib('bullets');
     if (bulletsKey) applyBullets(bulletsKey);
 
-    const copyKey = params.get('copy');
+    const copyKey = getAttrib('copy');
     if (copyKey) applyCopy(copyKey);
 
-    const heroKey = params.get('hero');
+    const heroKey = getAttrib('hero');
     if (heroKey) applyHero(heroKey);
 
     fillHiddenFields();
@@ -231,7 +311,8 @@
         });
 
         if (res.ok) {
-          if (typeof ym === 'function') ym(109561586, 'reachGoal', 'demo_form_submit');
+          fillHiddenFields();
+          await trackDemoFormSubmit();
           demoForm.reset();
           restoreHiddenFieldsAfterReset();
           demoFormStatus.textContent = 'Спасибо! Заявка отправлена — свяжемся с вами в ближайшее время.';
