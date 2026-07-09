@@ -6,27 +6,127 @@
   <title>Система ТОиР Fixaverse — программа учёта ремонтов на ИИ</title>
   <meta name="description" content="Fixaverse — программа ТОиР для предприятия: автоматизация технического обслуживания и ремонта, учёт ремонтов оборудования, система контроля простоя. Демо для завода." />
   <meta name="keywords" content="система тоир, программа тоир, программа учета ремонтов, автоматизация технического обслуживания и ремонта, программа для обслуживания оборудования, система управления техническим обслуживанием и ремонтами, программа тоир для предприятия" />
+  <meta name="yandex-verification" content="d6d248d82f8a58c1" />
   <link rel="canonical" href="https://fixaverse.ru/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://fixaverse.ru/" />
   <meta property="og:title" content="Fixaverse — система ТОиР на основе ИИ" />
   <meta property="og:description" content="Программа автоматизации технического обслуживания и ремонта для предприятия. Учёт ремонтов оборудования, copilot для техников." />
   <meta property="og:image" content="https://fixaverse.ru/assets/og-fixaverse.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="ru_RU" />
+  <meta property="og:site_name" content="Fixaverse" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fixaverse — система ТОиР на основе ИИ" />
+  <meta name="twitter:description" content="Программа автоматизации технического обслуживания и ремонта для предприятия. Учёт ремонтов оборудования, copilot для техников." />
+  <meta name="twitter:image" content="https://fixaverse.ru/assets/og-fixaverse.png" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Fixaverse",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Web, iOS, Android",
-    "description": "Система управления техническим обслуживанием и ремонтами на основе ИИ. Программа ТОиР для предприятия: автоматизация ТОиР, учёт ремонтов и обслуживание оборудования.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "RUB",
-      "description": "Демо"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fixaverse.ru/#organization",
+        "name": "Fixaverse",
+        "url": "https://fixaverse.ru/",
+        "logo": "https://fixaverse.ru/assets/logo-fixaverse.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://fixaverse.ru/#website",
+        "url": "https://fixaverse.ru/",
+        "name": "Fixaverse",
+        "publisher": { "@id": "https://fixaverse.ru/#organization" },
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://fixaverse.ru/#webpage",
+        "url": "https://fixaverse.ru/",
+        "name": "Система ТОиР Fixaverse — программа учёта ремонтов на ИИ",
+        "description": "Fixaverse — программа ТОиР для предприятия: автоматизация технического обслуживания и ремонта, учёт ремонтов оборудования, система контроля простоя.",
+        "isPartOf": { "@id": "https://fixaverse.ru/#website" },
+        "about": { "@id": "https://fixaverse.ru/#software" },
+        "inLanguage": "ru-RU"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://fixaverse.ru/#software",
+        "name": "Fixaverse",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "CMMS / EAM / ТОиР",
+        "operatingSystem": "Web, iOS, Android",
+        "url": "https://fixaverse.ru/",
+        "description": "Система управления техническим обслуживанием и ремонтами на основе ИИ. Программа ТОиР для предприятия: автоматизация ТОиР, учёт ремонтов и обслуживание оборудования.",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/PreOrder",
+          "description": "Демо по запросу"
+        },
+        "featureList": [
+          "Учёт ремонтов и заказ-наряды",
+          "Copilot для диагностики у оборудования",
+          "Память машины: симптом → причина → решение",
+          "Радар повторяющихся поломок",
+          "On-premise и private cloud"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fixaverse.ru/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Чем Fixaverse отличается от обычного ТОиР?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Большинство систем хранят заявки и документы. Fixaverse строит живую память каждой машины: симптом → причина → действие → запчасть → результат → источник. Техник сканирует QR и видит не PDF, а историю — что ломалось, что помогло и кто подтвердил решение."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли доверять ответам ИИ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fixaverse показывает источник, версию документа, фрагмент инструкции и уровень уверенности. Если данных нет — система честно скажет «недостаточно данных», а не выдаст уверенную галлюцинацию."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Что происходит с опытом после ремонта?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "После ремонта Fixaverse собирает отчёт, кейс и историю оборудования — и предлагает старшему инженеру подтвердить кейс или обновить инструкцию."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как copilot помогает у оборудования?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Сканируете шильдик, описываете симптом — copilot ведёт по диагностике шаг за шагом, просит фото и меняет сценарий по результату. Инструкция становится динамической, а не статичной PDF-простынёй."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Останутся ли документы в нашем контуре?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fixaverse подключается внутри вашего контура: on-premise, private cloud, read-only коннекторы, журнал запросов и запрет обучения моделей на ваших данных."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Нужны ли датчики для аналитики поломок?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Нет — на старте. Радар повторяющихся поломок работает на истории ремонтов, заявках, отчётах и документации из 1С и других систем ТОиР."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
@@ -75,7 +175,7 @@
         <p class="eyebrow" id="hero-eyebrow" data-ab="eyebrow">Связанный. Интеллектуальный. Адаптивный.</p>
         <div class="hero-grid">
           <div class="hero-left">
-            <h1 class="hero-title" id="hero-h1" data-ab="h1">Первая система ТОиР на&nbsp;основе&nbsp;ИИ</h1>
+            <h1 class="hero-title" id="hero-h1" data-ab="h1">Система ТОиР на&nbsp;основе&nbsp;ИИ</h1>
             <div class="hero-cta">
               <a href="#demo" class="btn-primary btn-pill demo-link">Запросить демо</a>
             </div>
@@ -91,7 +191,7 @@
                 <span class="ui-order-id">№034</span>
                 <span class="ui-pill ui-pill--blue">Новый</span>
               </div>
-              <h2 class="ui-order-title">Сезонная проверка электросоединений</h2>
+              <p class="ui-order-title">Сезонная проверка электросоединений</p>
               <div class="ui-order-foot">
                 <span class="ui-status"><span class="ui-status-ring"></span>Открыт</span>
                 <span class="ui-time">
@@ -103,7 +203,7 @@
 
             <div class="ui-card ui-card--dash">
               <div class="ui-dash-section">
-                <h3 class="ui-dash-title">Процент выполнения</h3>
+                <p class="ui-dash-title">Процент выполнения</p>
                 <div class="ui-kpis">
                   <div class="ui-kpi ui-kpi--blue">
                     <strong>87</strong>
@@ -135,7 +235,7 @@
               <div class="ui-dash-divider"></div>
 
               <div class="ui-dash-section">
-                <h3 class="ui-dash-title">Объекты</h3>
+                <p class="ui-dash-title">Объекты</p>
                 <div class="ui-place">
                   <span class="ui-pin" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none"><path d="M12 2.5c-3.04 0-5.5 2.35-5.5 5.25 0 3.95 5.5 13.25 5.5 13.25S17.5 11.7 17.5 7.75 15.04 2.5 12 2.5Z" fill="#45d483"/><circle cx="12" cy="7.75" r="2" fill="#0f172a"/></svg>
@@ -170,7 +270,7 @@
       </div>
     </section>
 
-    <section class="platform" data-ab-hide-layout="lean">
+    <section class="platform" id="platform" data-ab-hide-layout="lean">
       <div class="container platform-head">
         <h2 class="section-title">Не просто ТОиР. Мозг оборудования.</h2>
         <p class="section-lead">Программа ТОиР для предприятия: автоматизация технического обслуживания и ремонта без архива PDF. Fixaverse хранит причинно-следственную память ремонтов — каждая фича заточена под доверие, поле и ваш контур данных.</p>
@@ -371,7 +471,7 @@
       </div>
     </section>
 
-    <section class="feature-radar" data-ab-hide-layout="lean">
+    <section class="feature-radar" id="radar" data-ab-hide-layout="lean">
       <div class="container">
         <p class="eyebrow">Радар повторяющихся поломок</p>
         <h2 class="section-title">Видите, где система ломается снова.</h2>
@@ -689,7 +789,7 @@
     </section>
 
 
-    <section class="killer-more" data-ab-hide-layout="lean">
+    <section class="killer-more" id="features" data-ab-hide-layout="lean">
       <div class="container">
         <p class="eyebrow">Ещё возможности</p>
         <h2 class="section-title">Всё, что нужно инженеру-технику в поле и в цеху</h2>
@@ -886,9 +986,9 @@
         <p>© 2026 Fixaverse</p>
       </div>
       <div class="footer-cols">
-        <div><strong>Возможности</strong><a href="#">copilot по ремонту</a><a href="#">Детектор противоречий</a><a href="#">Умные запчасти</a></div>
-        <div><strong>Компания</strong><a href="#">О нас</a><a href="#">Карьера</a><a href="#">Контакты</a></div>
-        <div><strong>Поддержка</strong><a href="#">Справка</a><a href="#">Статус</a><a href="#">Политика конфиденциальности</a></div>
+        <div><strong>Возможности</strong><a href="#copilot">copilot по ремонту</a><a href="#features">Детектор противоречий</a><a href="#features">Умные запчасти</a></div>
+        <div><strong>Продукт</strong><a href="#platform">Память оборудования</a><a href="#radar">Радар поломок</a><a href="#faq">Вопросы и ответы</a></div>
+        <div><strong>Связь</strong><a href="#demo">Запросить демо</a><a href="mailto:hello@fixaverse.ru">hello@fixaverse.ru</a></div>
       </div>
     </div>
   </footer>
